@@ -23,7 +23,7 @@ date_default_timezone_set("Asia/Kolkata");
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/AuditSystem';
+$config['base_url'] = 'http://localhost/BeerOlympics';
 
 /*
 |--------------------------------------------------------------------------
@@ -368,7 +368,7 @@ $config['encryption_key'] = 'ashboard';
 |
 */
 $config['sess_driver'] = 'database';
-$config['sess_cookie_name'] = 'ci_session_dashboard';
+$config['sess_cookie_name'] = 'ci_session_beerolympics';
 $config['sess_expiration'] = 0;
 $config['sess_save_path'] = 'ci_sessions';
 $config['sess_match_ip'] = FALSE;

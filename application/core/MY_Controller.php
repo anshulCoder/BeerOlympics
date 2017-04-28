@@ -6,8 +6,6 @@
  * @property Dataformatinghtml_library $dataformatinghtml_library
  * @property Sendemail_library $sendemail_library
  * @property curl_library $curl_library
- * @property Twitter $twitter
- * @property GoogleUrlApi $googleurlapi
  * @property Mobile_Detect $mobile_detect
  * @property CI_User_agent $agent
  * @property CI_Session $session
@@ -18,14 +16,6 @@
 class MY_Controller extends CI_Controller
 {
 	public $pageUrl = '';
-
-    /* for Mobile session */
-    public $isMobUserSession = '';
-    public $userMobType = '';
-    public $userMobId = '';
-    public $userMobName = '';
-    public $userMobFirstName = '';
-    public $userMobEmail = '';
 
 	public $isUserSession = '';
 	public $userType = '';
@@ -52,8 +42,6 @@ class MY_Controller extends CI_Controller
 		$this->load->library('sendemail_library');
 		$this->load->library('Mobile_Detect');
 		$this->load->library('curl_library');
-        $this->load->library('Twitter');
-        $this->load->library('GoogleUrlApi');
 
 		//
 		if($this->agent->is_referral() == false)
@@ -65,19 +53,6 @@ class MY_Controller extends CI_Controller
 			$this->pageUrl = base_url();
 		}
 
-		//
-        if (isSession($this->session->user_mob_type) !== false)
-        {
-            $this->isMobUserSession = ACTIVE;
-            $this->userMobType = $this->session->user_mob_type;
-            $this->userMobName = $this->session->user_mob_name;
-            $this->userMobId = $this->session->user_mob_id;
-            if(isset($this->session->user_mob_email))
-            {
-                $this->userMobEmail = $this->session->user_mob_email;
-            }
-            $this->userMobFirstName = $this->session->user_mob_firstname;
-        }
 
 		if (isSession($this->session->user_type) !== false)
 		{

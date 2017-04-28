@@ -14,42 +14,12 @@ class Dataformatinghtml_library
         $htmlPage = $this->CI->load->view('common/GlobalstyleView', $data, true);
         return $htmlPage;
     }
-    public function getMobileStyleHtml($data)
-    {
-        $htmlPage = $this->CI->load->view('common/MobilestyleView', $data, true);
-        return $htmlPage;
-    }
-    public function getAndroidStyleHtml($data)
-    {
-        $htmlPage = $this->CI->load->view('mobile/android/AndroidstyleView', $data, true);
-        return $htmlPage;
-    }
-    public function getAndroidJsHtml($data)
-    {
-        $htmlPage = $this->CI->load->view('mobile/android/AndroidjsView', $data, true);
-        return $htmlPage;
-    }
-    public function getIosStyleHtml($data)
-    {
-        $htmlPage = $this->CI->load->view('mobile/ios/IosstyleView', $data, true);
-        return $htmlPage;
-    }
-    public function getIosJsHtml($data)
-    {
-        $htmlPage = $this->CI->load->view('mobile/ios/IosjsView', $data, true);
-        return $htmlPage;
-    }
-
     public function getGlobalJsHtml($data)
     {
         $htmlPage = $this->CI->load->view('common/GlobaljsView', $data, true);
         return $htmlPage;
     }
-    public function getMobileJsHtml($data)
-    {
-        $htmlPage = $this->CI->load->view('common/MobilejsView', $data, true);
-        return $htmlPage;
-    }
+
     public function getHeaderHtml($data)
     {
         $htmlPage = $this->CI->load->view('HeaderView', $data, true);

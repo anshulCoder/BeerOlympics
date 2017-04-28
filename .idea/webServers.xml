@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a0b3c1ed-99b2-4e37-af83-d2fe842bcd5f" name="beerolympics" url="http://beerolympics.doolally.in">
+        <fileTransfer host="beerolympics.doolally.in" port="22" privateKey="C:\Users\anshul\Downloads\doolallydev.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

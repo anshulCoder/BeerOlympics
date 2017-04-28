@@ -52,4 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = 'Page404';
 $route['translate_uri_dashes'] = FALSE;
-$route['mrp_data'] = 'home/mrpData';
+$route['submitBeerForm'] = 'home/getPaymentLink';
+$route['submitBusForm'] = 'home/getBusPayLink';
+$route['checkCoupon'] = 'home/verifyCoupon';
+$route['thank_you'] = 'home/thankYou';

@@ -38,7 +38,7 @@
 }
 .my-marginDown
 {
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 .my-marginUp
 {
@@ -234,470 +234,286 @@ input::-webkit-inner-spin-button {
     transform: translateX(-50%) translateY(-50%);
 }
 
-/* for login form*/
-#mainLoginForm .login-error-block
+/* Bootstrap Override */
+.row
 {
-    color:red;
+    margin:0;
+}
+
+
+/* Beer Olympics Css */
+.beerHome
+{
+    background:#f8f8f8;
+    font-family: 'Averia Serif Libre' !important;
+}
+.beerHome .main-logo
+{
+    display: block;
+    width: 80px;
+    margin: 0 auto;
+}
+.beerHome .pink-color
+{
+    color:#ce2840;
+}
+.beerHome .common-pink-txt
+{
+    color:#ce2840;
+    font-style: italic;
+}
+.beerHome .common-black-txt
+{
+    color: #000;
+    opacity: 0.87;
+}
+.beerHome .bolder-black
+{
+    color:#000;
     font-weight:bold;
 }
-.homePage .my-timer
+.beerHome .custom-collapse-bar i
 {
-    font-size:20px;
+    float:none;
+    vertical-align: middle;
+    margin-left:5px;
 }
-.homePage .my-mainMenuList li, .mailPage .my-mainMenuList li
+.beerHome .games-panel
 {
-    position:relative;
+    box-shadow: none !important;
+    background-color:transparent;
 }
-.mailPage .press-add-btn
+.beerHome .games-img
+{
+    width:200px;
+}
+.beerHome .pmd-list .list-group-item
+{
+    padding:0;
+}
+.beerHome .games-description
 {
     margin:20px;
 }
-.homePage .my-mainMenuList li a, .mugCheckIn .my-mainMenuList li a,
-.mailPage .my-mainMenuList li a, .offerPage .my-mainMenuList li a
+.beerHome .swiper-container-horizontal>.swiper-pagination-bullets,.beerHome .swiper-pagination-custom, .swiper-pagination-fraction
 {
-    text-decoration: none;
-    color:#333;
+    bottom:5px;
 }
-.homePage .my-mainMenuList .menuWrap
+.beerHome .swiper-pagination-bullet
 {
-    cursor: pointer;
-    border:1px solid #ccc;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-    -webkit-box-shadow: 0 0 5px #ccc;
-    -moz-box-shadow: 0 0 5px #ccc;
-    box-shadow: 0 0 5px #ccc;
-    margin: 5px;
-    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.24);
 }
-.homePage .loginpin-list li , .pinChange .loginpin-list li
+.beerHome .swiper-pagination-bullet-active
 {
-    width:45px;
+    background-color: rgba(0, 0, 0, 0.54);
 }
-.mugCheckIn .my-mainMenuList .menuWrap, .mailPage .my-mainMenuList .menuWrap, .offerPage .my-mainMenuList .menuWrap
+.beerHome .beer-olympics-logo
 {
-    cursor: pointer;
-    border:1px solid #ccc;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-    -webkit-box-shadow: 0 0 5px #ccc;
-    -moz-box-shadow: 0 0 5px #ccc;
-    box-shadow: 0 0 5px #ccc;
-    padding: 10px;
-    margin:5px;
+    display: block;
+    margin: 25px auto;
+    width: 325px;
 }
-.mailPage .my-mainMenuList .menuWrap
+.beerHome .pune-bus-logo
 {
-    width:130px;
+    width: 400px;
+    margin: 20px auto;
 }
-.mugCheckIn .my-mainMenuList li a span
+.beerHome .pune-bus-small-logo
 {
-    font-weight: bold;
+    width: 300px;
+    margin: 20px auto;
 }
-.homePage .my-mainMenuList li a span
+.beerHome .my-trophy-img
 {
-    font-size:1.5em;
-    color:green;
-    position: relative;
-    top:5px;
-}
-.pac-container
-{
-    z-index:10000 !important;
-}
-#my_map
-{
-    height:300px;
-    margin-top:10px;
-}
-.locSelectPage .my-mainMenuList li>input, .mugCheckIn .my-mainMenuList li>input
-{
-    display:none;
-}
-.locSelectPage .my-mainMenuList li>label
-{
-    cursor: pointer;
-    border:1px solid #ccc;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-    -webkit-box-shadow: 0 0 5px #ccc;
-    -moz-box-shadow: 0 0 5px #ccc;
-    box-shadow: 0 0 5px #ccc;
+    width: 100px;
     margin: 20px;
-    padding: 20px;
-    text-align:center;
 }
-.locSelectPage .my-mainMenuList li input[type="radio"]:checked +label, .mugCheckIn .my-mainMenuList li input[type="radio"]:checked +label
+.beerHome .bus-booking-btn
 {
-    background-color:#ccc;
+    text-transform: none;
+    background-color:#ce2840;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    color:#fff;
+    font-style: italic;
 }
-.mugClub .pagination-List
+.beerHome #busBookerSeats
 {
-    margin-top:10px;
+    width:75px;
 }
-.mugClub .form-horizontal .form-group
+.beerHome .included-images
 {
-    margin-left:0;
-    margin-right:0;
+    margin:0 auto;
 }
-.mugClub .pagination-List>li
+.beerHome .included-list li
 {
-    padding:0;
+    margin:10px;
 }
-.mugClub .avail-header .available-mugs-list .avail-mugs
+.beerHome .included-list li p
 {
-    cursor: pointer;
+    font-size:13px;
+    padding-top:5px;
 }
-.mugCheckIn .my-mainMenuList li>label
+.beerHome .pmd-checkbox [type=checkbox]:checked+.pmd-checkbox-label:before
 {
-    cursor: pointer;
-    border:1px solid #ccc;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-    -webkit-box-shadow: 0 0 5px #ccc;
-    -moz-box-shadow: 0 0 5px #ccc;
-    box-shadow: 0 0 5px #ccc;
-    padding: 10px;
-    text-align:center;
-    width:100px;
+    background-color:rgba(206,40,64,0.87);
 }
-.mugCheckIn .my-info-filler
+.beerHome .pmd-checkbox [type=checkbox]:checked+.pmd-checkbox-label:before,
+.beerHome .pmd-checkbox [type=checkbox]:not(:checked)+.pmd-checkbox-label:before
 {
-    opacity:0;
+    border-color:rgba(206,40,64,0.54);
 }
-.mugCheckIn .mugInput #mugNum
+.beerHome .order-summary-divider
 {
-    height:50px;
-}
-.mugCheckIn .mugInput .verify-checkin-btn
-{
-    height:50px;
-}
-.mugCheckIn .final-checkIn-row .final-checkin-btn
-{
-    font-size:20px;
-}
-.mugCheckIn .form-horizontal .control-label
-{
-    padding: 7px 0;
-}
-
-.mugCheckIn .main-box{
-    box-shadow: 0 0 5px #ccc;
-}
-
-.mugCheckIn .fill-remaining-info a
-{
-    text-decoration: none;
-    cursor:default;
-}
-.info-fill-overlay{
-    position: absolute;
     width: 100%;
-    height: 100%;
-    opacity: 0.8;
-    background: #000;
-    display: none;
+    height: 14px;
+    border-bottom: 1px solid #ce2840;
+    text-align: center;
 }
-
-#searchModal .my-checkIn-search-table tr{
-    cursor:pointer;
-}
-
-#searchModal #main-mugclub-table, #todayModal #main-mugclub-table, .offerPage table
-{
-    width:100% !important;
-}
-#searchModal .modal-body .modal-table
-{
-    overflow: auto;
-}
-
-.userList .adduser-btn, .locationsList .adduser-btn
-{
-    margin-bottom:10px;
-}
-
-.mailPage .my-mainMenuList li .badge
-{
-    position: absolute;
-    top:-5px;
-    right:0;
-    background-color:red;
-}
-.mailPage #mainMailerForm .form-group #mailBody
-{
-    height:200px;
-}
-.mailPage .custom-mugs-list
-{
-    border:1px solid #ccc;
-    padding:5px;
-    height:200px;
-    overflow:auto;
-}
-.mailPage .mugtags-list
+.beerHome .order-summary-divider span
 {
     font-size:16px;
-}
-#bodyModal .body-half-txt li
-{
-    border-bottom:1px solid #ccc;
-    border-radius:5px;
-}
-#bodyModal #body-preview
-{
-    height:200px;
-}
-.offerPage .stats-nums
-{
-    color:#337ab7;
     font-weight: bold;
-    font-size:20px;
+    text-align: center;
+    background-color:#f8f8f8;
+    color: #ce2840;
+    padding: 0 10px;
 }
-.dashboard nav{
-    margin-bottom:0;
-}
-.dashboard #feedWeekly-canvas
+.beerHome .summary-list>li
 {
-    display:block !important;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: left;
+    vertical-align: top;
 }
-.dashboard .custom-filter
+.beerHome .wagon-check
 {
-    width:150px;
+    margin-top:45px;
 }
-.dashboard .barContainers
+.beerHome .order-header
 {
-    width:200px;
-    height:250px;
-    margin:0 auto;
+    padding:5px;
 }
-.dashboard #instamojo .demo-card-square > .mdl-card__title {
-    color: #fff;
-    background-color:#00BBD6;
-}
-.dashboard #instamojo .demo-card-square .fa-beer{
-    color:gold;
-}
-.dashboard #instamojo .demo-card-square .mugTitle{
-    margin-left:5px;
-    margin-top:10px;
-}
-.dashboard #instamojo .demo-card-square
+.beerHome .order-header ul
 {
-    width:auto !important;
-}
-.dashboard dialog.mdl-dialog .mdl-dialog__title
-{
-    padding:0;
-    font-size: x-large;
-}
-.dashboard #feedback .dynamic-form-wrapper
-{
-    height:400px;
-    overflow: auto;
-}
-.dashboard #beerLoc-modal .beer-loc-select ul li
-{
-    background: #ccc;
-    border-radius: 20px;
-    cursor: pointer;
-}
-.dashboard #beerLoc-modal .loc-info
-{
-    background: #A2C760;
-    border-radius: 20px;
-    cursor: pointer;
-}
-.dashboard #beerLoc-modal .loc-info span
-{
-    color:#fff;
-}
-.dashboard #beerLoc-modal .loc-info i
-{
-    background:#ccc;
-    padding: 2px;
-    border-radius: 20px;
-}
-.dashboard #peopleView-modal table tbody
-{
-    text-align:left;
-}
-.dashboard .mdl-radio__outer-circle, .dashboard .mdl-radio__inner-circle, .dashboard .mdl-radio__ripple-container
-{
-    margin-left: 5px;
-    margin-top: 2px;
-}
-.dashboard .myFormWrapper
-{
-    border-bottom:1px solid #ccc;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-}
-.dashboard .all-loc-block, .eventEdit .all-loc-block
-{
-    padding-top:30px;
-}
-.eventEdit .img-remove-icon, .fnbEdit .img-remove-icon
-{
-    position: absolute;
-    top: 5px;
-    right: 20px;
-    background:#fff;
-    cursor:pointer;
-}
-.eventViewer .event-descrip-wrapper
-{
-    position: relative;
-}
-.eventViewer .my-right-event-icon
-{
-    position: absolute;
-    right:10px;
-    top:15px;
-}
-.eventViewer .event-header-name
-{
-    color:black;
-    font-size:20px;
-    padding: 15px 15px 0;
-}
-.eventViewer .event-sub-text
-{
-    color:#847F7B;
-    padding: 0 15px 10px;
     margin:0;
 }
-.eventViewer .event-img
+.beerHome .pmd-chip
 {
-    margin:0 auto;
+    line-height:25px;
 }
-.eventViewer blockquote:before, .eventViewer blockquote:after
+.beerHome .my-hr
 {
+    border-top:1px solid #000;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+/* Custom Progress bar */
+/* Progress Bar */
+.progress {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 4px;
+    display: block;
+    width: 100%;
+    background-color: rgba(206,40,64,0.4);
+    border-radius: 2px;
+    background-clip: padding-box;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.progress .indeterminate {
+    background-color: #ce2840;
+}
+.progress .indeterminate:before {
     content: '';
-    margin:0;
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate 2.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+    animation: indeterminate 2.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
 }
-.eventViewer .ic_events_icon
-{
-    background:#fffdf4 url('../images/ic_events_off.png') no-repeat;
-    display:block;
-    width:25px;
-    height:25px;
-    background-size: 100% 100%;
+.progress .indeterminate:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate-short 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation: indeterminate-short 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    -webkit-animation-delay: 1.15s;
+    animation-delay: 1.15s;
 }
 
-/* Wallet css */
-.walletPage .wallet-action-btns li
-{
-    margin:5px;
+@-webkit-keyframes indeterminate {
+    0% {
+        left: -35%;
+        right: 100%; }
+    60% {
+        left: 100%;
+        right: -90%; }
+    100% {
+        left: 100%;
+        right: -90%; }
 }
-.walletPage .tbl-responsive
-{
-  overflow: auto;
+@keyframes indeterminate {
+    0% {
+        left: -35%;
+        right: 100%; }
+    60% {
+        left: 100%;
+        right: -90%; }
+    100% {
+        left: 100%;
+        right: -90%; }
 }
-.walletPage .tbl-responsive table
-{
-    margin:0 auto;
+@-webkit-keyframes indeterminate-short {
+    0% {
+        left: -200%;
+        right: 100%; }
+    60% {
+        left: 107%;
+        right: -8%; }
+    100% {
+        left: 107%;
+        right: -8%; }
 }
-.walletPage .wallet-check-panel
-{
-    margin-top:50px;
-    background: #fcf8e3;
-}
-.walletPage .mdl-card__supporting-text
-{
-    width:100%;
-}
-.walletPage .mdl-card__title
-{
-    display:block;
-}
-.walletPage table.dataTable td,.walletPage table.dataTable th
-{
-    text-align:left;
-}
-.mdl-tooltip
-{
-    will-change:unset;
-}﻿
-.walletPage .mdl-card__title
-{
-display:block;
-}
-.walletPage #staffTable_wrapper
-{
-    width:100%;
-}
-.walletPage .my-timer
-{
-    font-size:20px;
-}
-.templates .mugtags-list span
-{
-    font-size:85%;
-}
-@media screen and (max-width: 1024px)
-{
-    .mailPage .mail-content
-    {
-        width:100% !important;
-    }
+@keyframes indeterminate-short {
+    0% {
+        left: -200%;
+        right: 100%; }
+    60% {
+        left: 107%;
+        right: -8%; }
+    100% {
+        left: 107%;
+        right: -8%; }
 }
 @media screen and (max-width:767px)
 {
-    .mugCheckIn .form-horizontal .control-label
+    .beerHome .wagon-check
     {
-        padding: 7px 15px;
-    }
-    .notification-indicator
-    {
-        top: 8px;
-        left: 8px;
-        right:0;
-    }
-    .mailPage .custom-mugs-list
-    {
-        height:150px;
-    }
-    .mailPage .custom-mugs-list ul
-    {
-        text-align:center;
+        margin-top:0;
     }
 }
-
-@media screen and (max-width:650px)
+@media screen and (max-width:500px)
 {
-    .mugCheckIn .mugNumber-status ul
+    .beerHome .media-left.media-middle
     {
-        font-size:12px;
+        display:block !important;
     }
 }
-@media screen and (max-width:440px)
+@media screen and (max-width:400px)
 {
-    .mugCheckIn .main-box.col-xs-10{
-        width:100% !important;
-        padding:0;
-    }
-    .mugCheckIn .form-adjust-insmall
+    .beerHome .summary-list>li
     {
-        width:0 !important;
-    }
-}
-
-@media screen and (max-width: 350px)
-{
-    .mugCheckIn .checkin-info-panel
-    {
-        padding:0;
-    }
-    .mugCheckIn .visual-status-icons
-    {
-        padding:0;
-        text-align:center;
+        padding-right:5px;
+        padding-left:5px;
     }
 }

@@ -20,35 +20,10 @@ class Home extends MY_Controller {
 		$data = array();
 		$data['globalStyle'] = $this->dataformatinghtml_library->getGlobalStyleHtml($data);
 		$data['globalJs'] = $this->dataformatinghtml_library->getGlobalJsHtml($data);
-		$data['headerView'] = $this->dataformatinghtml_library->getHeaderHtml($data);
-        $data['title'] = "Audit System";
+		//$data['headerView'] = $this->dataformatinghtml_library->getHeaderHtml($data);
+
 		$this->load->view('HomeView', $data);
 	}
-
-	public function saveBeerRecords()
-    {
-        $post = $this->input->post();
-
-        var_dump($post);
-        $ids = explode(',',$post['beer_id']);
-        $locs = explode(',',$post['location_name']);
-
-        for($i=0;$i<count($ids);$i++)
-        {
-            $details = array(
-                'beer_id' => $ids[$i],
-                'beer_name' => $post['beer_name'],
-                'beer_qty' => $post['beer_qty'],
-                'liters_consumed' => $post['liters_consumed'],
-                'beer_catagory' => $post['beer_cat'],
-                'location_name' => $locs[$i],
-                'updateDateTime' => date('Y-m-d H:i:s')
-            );
-
-            $this->home_model->saveBeerRecord($details);
-        }
-        echo 'Success';
-    }
 
     public function mrpData()
     {
@@ -58,6 +33,393 @@ class Home extends MY_Controller {
         $data['headerView'] = $this->dataformatinghtml_library->getHeaderHtml($data);
 
         $this->load->view('MrpDataView', $data);
+    }
+
+    public function getPaymentLink()
+    {
+        $post = $this->input->post();
+        $data = array();
+
+        $isCouponSet = false;
+        $finalAmt = INITIAL_TEAM_AMOUNT;
+        // Checking for coupon code
+        if(isset($post['couponCode']) && isStringSet($post['couponCode']))
+        {
+            $coupon = $post['couponCode'];
+
+            $couponStatus = $this->home_model->checkCouponCode($coupon);
+            if(myIsArray($couponStatus))
+            {
+                if($couponStatus['isRedeemed'] == '1')
+                {
+                    $data['status'] = false;
+                    $data['errorMsg'] = 'Coupon Already Redeemed!';
+                    echo json_encode($data);
+                    return false;
+                }
+                elseif(strtotime($couponStatus['couponExpiry']) < strtotime(date('Y-m-d')))
+                {
+                    $data['status'] = false;
+                    $data['errorMsg'] = 'Coupon Has Expired!';
+                    echo json_encode($data);
+                    return false;
+                }
+                else
+                {
+                    $redeemedData = array(
+                        'isRedeemed' => '1',
+                        'useDateTime' => date('Y-m-d H:i:s')
+                    );
+                    $couponId = $couponStatus['id'];
+                    $this->home_model->markCouponAsUsed($redeemedData,$couponId);
+                    $finalAmt = $this->computeCoupon($couponStatus['couponType'],$couponStatus['couponDetails'],$finalAmt);
+                    //$finalAmt = FINAL_COUPON_AMOUNT;
+                    $isCouponSet = true;
+                }
+            }
+            else
+            {
+                $data['status'] = false;
+                $data['errorMsg'] = 'Invalid Coupon!';
+                echo json_encode($data);
+                return false;
+            }
+        }
+        //Saving Captain Data
+        $capData = array(
+            'capName' => $post['capName'],
+            'capAge' => $post['capAge'],
+            'capEmail' => $post['capEmail'],
+            'capMob' => $post['capMob'],
+            'capCity' => $post['capCity'],
+            'capZip' => $post['capZip'],
+            'capTshirt' => $post['capTshirt'],
+            'insertedDateTime' => date('Y-m-d H:i:s')
+        );
+        if(isset($couponId))
+        {
+            $capData['couponId'] = $couponId;
+        }
+        if(isset($post['ifBusRequiredCap']) && isStringSet($post['ifBusRequiredCap']))
+        {
+            $capData['ifBusRequired'] = $post['ifBusRequiredCap'];
+            if(!$isCouponSet)
+            {
+                $finalAmt += WAGON_PRICE;
+            }
+        }
+
+        $captainId = $this->home_model->saveCaptainRecord($capData);
+
+        //Saving Athlete's data
+        for($i=1;$i<4;$i++)
+        {
+            $athleteData = array(
+                'capId' => $captainId,
+                'athleteName' => $post['athName'.$i],
+                'athleteAge' => $post['athAge'.$i],
+                'athleteTshirt' => $post['athTshirt'.$i]
+            );
+            if(isset($post['ifBusRequired'.$i]) && isStringSet($post['ifBusRequired'.$i]))
+            {
+                $athleteData['ifBusRequired'] = $post['ifBusRequired'.$i];
+                if(!$isCouponSet)
+                {
+                    $finalAmt += WAGON_PRICE;
+                }
+            }
+
+            $this->home_model->saveAthleteRecord($athleteData);
+        }
+
+        //Saving Payment Info
+        $payData = array(
+            'capId' => $captainId,
+            'busId' => null,
+            'tripAmount' => $finalAmt,
+            'bookingStatus' => '0',
+            'paymentDateTime' => date('Y-m-d H:i:s')
+        );
+
+        $payId = $this->home_model->savePaymentRecord($payData);
+
+        // Getting the payment link
+        $purpose = 'New Beer Olympics Booking';
+        $instaData = $this->getInstaLink($post['capName'],$post['capEmail'],$post['capMob'],$finalAmt,$payId,$purpose);
+
+        if($instaData['status'] === false)
+        {
+            $data['status'] = false;
+            $data['errorMsg'] = $instaData['errorMsg'];
+        }
+        else
+        {
+            $data['status'] = true;
+            $data['payUrl'] = $instaData['payUrl'];
+        }
+        echo json_encode($data);
+    }
+
+    public function getBusPayLink()
+    {
+        $post = $this->input->post();
+        $data = array();
+
+        $finalAmt = WAGON_PRICE;
+        if(isset($post['busBookerName']) && isStringSet($post['busBookerName']) &&
+            isset($post['busBookerEmail']) && isStringSet($post['busBookerEmail']) &&
+            isset($post['busBookerMobile']) && isStringSet($post['busBookerMobile']) &&
+            isset($post['busBookerSeats']) && isStringSet($post['busBookerSeats']))
+        {
+            $busData = array(
+                'busName' => $post['busBookerName'],
+                'busEmail' => $post['busBookerEmail'],
+                'busPhone' => $post['busBookerMobile'],
+                'busSeats' => $post['busBookerSeats'],
+                'insertedDateTime' => date('Y-m-d H:i:s')
+            );
+
+            $busId = $this->home_model->saveBusRecord($busData);
+            $finalAmt = $finalAmt * $post['busBookerSeats'];
+
+            //Saving Payment Info
+            $payData = array(
+                'capId' => null,
+                'busId' => $busId,
+                'tripAmount' => $finalAmt,
+                'bookingStatus' => '0',
+                'paymentDateTime' => date('Y-m-d H:i:s')
+            );
+
+            $payId = $this->home_model->savePaymentRecord($payData);
+
+            // Getting the payment link
+            $purpose = 'Beer Olympics Wagon Booking';
+            $instaData = $this->getInstaLink($post['busBookerName'],$post['busBookerEmail'],$post['busBookerMobile'],$finalAmt,$payId,$purpose);
+
+            if($instaData['status'] === false)
+            {
+                $data['status'] = false;
+                $data['errorMsg'] = $instaData['errorMsg'];
+            }
+            else
+            {
+                $data['status'] = true;
+                $data['payUrl'] = $instaData['payUrl'];
+            }
+        }
+        else
+        {
+            $data['status'] = false;
+            $data['errorMsg'] = 'Incomplete Request Received!';
+        }
+        echo json_encode($data);
+    }
+    function getInstaLink($name,$email,$mobNum,$finalAmt,$payId,$purpose)
+    {
+        $data = array();
+        $instaDetails = array(
+            'amount' => $finalAmt,
+            'purpose' => $purpose,
+            'buyer_name' => $name,
+            'email' => $email,
+            'phone' => $mobNum,
+            'send_email' => true,
+            'send_sms' => true,
+            'allow_repeated_payments' => false,
+            'redirect_url' => base_url().'thank_you',
+        );
+        $linkGot = $this->curl_library->createInstaPayLink($instaDetails);
+
+        if(myIsArray($linkGot) && $linkGot['success'] === true)
+        {
+            if(isset($linkGot['payment_request']['id']))
+            {
+                $payReqId = $linkGot['payment_request']['id'];
+                $payReqUrl = $linkGot['payment_request']['longurl'].'?embed=form';
+
+                $details = array(
+                    'paymentId' => $payReqId,
+                    'paymentUrl' => $payReqUrl
+                );
+
+                $this->home_model->updatePayDetails($details,$payId);
+
+                $data['status'] = true;
+                $data['payUrl'] = $payReqUrl;
+            }
+            else
+            {
+                $data['status'] = false;
+                $data['errorMsg'] = "Error Connecting To Payment Server";
+            }
+        }
+        else
+        {
+            $data['status'] = false;
+            $data['errorMsg'] = "Error Connecting To Payment Server";
+        }
+
+        return $data;
+    }
+
+    public function verifyCoupon()
+    {
+        $post = $this->input->post();
+        $data = array();
+
+        if(isset($post['couponCode']) && isStringSet($post['couponCode']))
+        {
+            $coupon = $post['couponCode'];
+            $couponStatus = $this->home_model->checkCouponCode($coupon);
+            if(myIsArray($couponStatus))
+            {
+                if($couponStatus['isRedeemed'] == '1')
+                {
+                    $data['status'] = false;
+                    $data['errorMsg'] = 'Coupon Already Redeemed!';
+                    echo json_encode($data);
+                    return false;
+                }
+                elseif(strtotime($couponStatus['couponExpiry']) < strtotime(date('Y-m-d')))
+                {
+                    $data['status'] = false;
+                    $data['errorMsg'] = 'Coupon Has Expired!';
+                    echo json_encode($data);
+                    return false;
+                }
+                else
+                {
+                    $data['status'] = true;
+                    $data['couponType'] = $couponStatus['couponType'];
+                    $data['couponCost'] = $couponStatus['couponDetails'];
+                }
+            }
+            else
+            {
+                $data['status'] = false;
+                $data['errorMsg'] = 'Invalid Coupon!';
+                echo json_encode($data);
+                return false;
+            }
+        }
+        else
+        {
+            $data['status'] = false;
+            $data['errorMsg'] = 'Coupon Not Provided!';
+        }
+        $data['status'] = true;
+        echo json_encode($data);
+        //echo '<pre>';
+        //var_dump($post);
+    }
+
+    public function thankYou()
+    {
+        $data = array();
+        $get = $this->input->get();
+        if(isset($get['payment_request_id']))
+        {
+            $instaRecord = $this->home_model->getPayRecordByReqId($get['payment_request_id']);
+            if(isset($instaRecord) && myIsArray($instaRecord))
+            {
+                if($instaRecord['bookingStatus'] == '1' )
+                {
+                    $data['payStatus'] = false;
+                    $data['payError'] = 'You have already claimed the ticket on '.$instaRecord['capEmail'];
+                }
+                else
+                {
+                    $mailData = array();
+                    $userEmail = '';
+                    if(isset($instaRecord['capId']) && isStringSet($instaRecord['capId']))
+                    {
+                        $teamData = $this->home_model->getAllTeam($instaRecord['capId']);
+                        //Fetch all team details And send mail
+                        $busCount = 0;
+                        $isCapBus = true;
+
+                        foreach($teamData as $key => $row)
+                        {
+                            $mailData['capName'] = $row['capName'];
+                            $mailData['capEmail'] = $row['capEmail'];
+                            $mailData['athleteNames'][] = $row['athleteName'];
+                            if($row['ifBusRequiredCap'] == '1' && $isCapBus)
+                            {
+                                $isCapBus = false;
+                                $busCount++;
+                            }
+                            if($row['ifBusRequiredAthlete'] == '1')
+                            {
+                                $busCount++;
+                            }
+                        }
+                        $mailData['busCount'] = $busCount;
+                        $this->sendemail_library->teamBeerSendMail($mailData);
+                        $userEmail = $instaRecord['capEmail'];
+                    }
+                    else
+                    {
+                        $teamData = $this->home_model->getAllBusTeam($instaRecord['busId']);
+                        $this->sendemail_library->teamBusSendMail($teamData);
+                        $userEmail = $instaRecord['busEmail'];
+                    }
+
+                    $details = array(
+                        'tripMojoId' => $get['payment_id'],
+                        'bookingStatus' => '1'
+                    );
+                    $this->home_model->updatePayDetails($details,$instaRecord['id']);
+
+                    $data['payStatus'] = true;
+                    $data['paySuccess'] = 'A confirmation email has been sent to you on '.$userEmail;
+                }
+            }
+            else
+            {
+                $data['payStatus'] = false;
+                $data['payError'] = 'Payment Record Not Found!';
+            }
+        }
+        else
+        {
+            $data['payStatus'] = false;
+            $data['payError'] = 'Error in Payment Request!';
+        }
+
+        $data['globalStyle'] = $this->dataformatinghtml_library->getGlobalStyleHtml($data);
+        $data['globalJs'] = $this->dataformatinghtml_library->getGlobalJsHtml($data);
+        //$data['headerView'] = $this->dataformatinghtml_library->getHeaderHtml($data);
+
+        $this->load->view('HomeView', $data);
+    }
+
+    public function saveErrorLog()
+    {
+        $post = $this->input->post();
+
+        if(isset($post['errorTxt']))
+        {
+            if(isset($_SERVER['HTTP_REFERER']))
+            {
+                $post['refUrl'] = $_SERVER['HTTP_REFERER'];
+            }
+            $this->home_model->saveErrorLog($post);
+        }
+        return true;
+    }
+
+    function computeCoupon($type,$cost,$oldAmt)
+    {
+        $finalAmt = $oldAmt;
+        switch(strtolower($type))
+        {
+            case 'percentage':
+                $discount = getPercentOfNumber($oldAmt,$cost);
+                $finalAmt = $oldAmt - $discount;
+                break;
+        }
+        return $finalAmt;
     }
 
 }

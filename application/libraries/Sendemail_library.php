@@ -12,6 +12,7 @@ class Sendemail_library
     function __construct()
     {
         $this->CI = &get_instance();
+        $this->CI->load->model('home_model');
         /*$this->CI->load->model('offers_model');
         $this->CI->load->model('users_model');
         $this->CI->load->model('login_model');
@@ -628,6 +629,63 @@ class Sendemail_library
         $this->sendEmail($toEmail, $cc, $fromEmail, $fromPass, $fromName,$replyTo, $subject, $content);
     }
 
+    public function teamBeerSendMail($userData)
+    {
+        $data['mailData'] = $userData;
+
+        $startDate = str_replace(' ','T',date('Ymd His',strtotime('2017-05-20 11:00')));
+        $endDate = str_replace(' ','T',date('Ymd His',strtotime('2017-05-20 19:00')));
+        $data['calendar_url'] =
+            'https://www.google.com/calendar/event?action=TEMPLATE'.
+            '&text='.urlencode('Beer Olympics 2017').
+            '&dates='.$startDate.'/'.$endDate.
+            '&location='.urlencode('1st Brewhouse, Corinthians Resort and Club, NIBM Annexe, Mohmmadwadi, Pune').
+            '&details='. urlencode('Doolally Beer Olympics 2017').
+            '&sprop=&sprop=name:';
+
+        $content = $this->CI->load->view('emailtemplates/teamBeerSignupMailView', $data, true);
+
+        $fromEmail = DEFAULT_SENDER_EMAIL;
+        $fromPass = DEFAULT_SENDER_PASS;
+        $replyTo = 'priyanka@brewcraftsindia.com';
+
+        $cc = 'tresha@brewcraftsindia.com';
+        if($userData['busCount'] > 0 )
+        {
+            $cc .= ',belinda@brewcraftsindia.com,saha@brewcraftsindia.com';
+        }
+        $fromName  = 'Doolally';
+
+        $subject = 'We have registered Team '.$userData['capName'].' to participate in the Doolally Beer Olympics 2017!';
+        $toEmail = $userData['capEmail'];
+
+        $this->sendEmail($toEmail, $cc, $fromEmail, $fromPass, $fromName,$replyTo, $subject, $content);
+    }
+
+
+    public function teamBusSendMail($userData)
+    {
+        $data['mailData'] = $userData;
+
+        $content = $this->CI->load->view('emailtemplates/teamBusSignupMailView', $data, true);
+
+        $fromEmail = DEFAULT_SENDER_EMAIL;
+        $fromPass = DEFAULT_SENDER_PASS;
+        $replyTo = 'belinda@brewcraftsindia.com';
+
+        $cc = 'tresha@brewcraftsindia.com';
+        if($userData['busCount'] > 0 )
+        {
+            $cc .= ',priyanka@brewcraftsindia.com,saha@brewcraftsindia.com';
+        }
+        $fromName  = 'Doolally';
+
+        $subject = 'You have booked '.$userData['busSeats'].' seats on the Doolally Wagon';
+        $toEmail = $userData['busEmail'];
+
+        $this->sendEmail($toEmail, $cc, $fromEmail, $fromPass, $fromName,$replyTo, $subject, $content);
+    }
+
     public function sendEmail($to, $cc = '', $from, $fromPass, $fromName,$replyTo, $subject, $content, $attachment = array())
     {
         //Create the Transport
@@ -709,7 +767,7 @@ class Sendemail_library
             'sendDateTime' => date('Y-m-d H:i:s')
         );
 
-        $this->CI->mailers_model->saveSwiftMailLog($logDetails);
+        $this->CI->home_model->saveSwiftMailLog($logDetails);
         return $status;
         /*$CI =& get_instance();
         $CI->load->library('email');

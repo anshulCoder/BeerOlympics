@@ -274,3 +274,21 @@ if(!function_exists('slugify'))
         return $text;
     }
 }
+
+if(!function_exists('checkValidnSet'))
+{
+    function checkValidnSet($varTxt) {
+        $return = false;
+        if(isset($varTxt) && $varTxt != '')
+        {
+            $return = true;
+        }
+        return $return;
+    }
+}
+if(!function_exists('getPercentOfNumber'))
+{
+    function getPercentOfNumber($number, $percent){
+        return ($percent / 100) * $number;
+    }
+}

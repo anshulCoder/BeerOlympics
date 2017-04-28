@@ -1,76 +1,16 @@
 <!--not tho change js-->
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/jquery-2.2.4.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/material.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/moment.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/bootbox.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/getmdl-select.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/Chart.min.js"></script>
-<script src="http://cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/progressbar.min.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBu7Do2fKtcQYdGyoC5glTzRLxs6FKxy4Y&libraries=places"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/mobile/js/jquery.swipebox.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/jquery.geocomplete.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/doolally-local-session.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/propeller.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/swiper.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/angular.min.js"></script>
 
 <!-- constants -->
 <script>
-    <?php
-        if(isset($this->currentLocation) && isSessionVariableSet($this->currentLocation) === true)
-        {
-            ?>
-                window.currentLocation = <?php echo $this->currentLocation; ?>;
-            <?php
-        }
-    ?>
     window.base_url = '<?php echo base_url(); ?>';
 </script>
 
-<script>
-    $(document).on('submit','#mainLoginForm', function(e){
-
-        e.preventDefault();
-        if(typeof $(this).find('input[name="userOtp"]').val() != 'undefined')
-        {
-            if($(this).find('input[name="userOtp"]').val() == '')
-            {
-                bootbox.alert('OTP is Required!');
-                return false;
-            }
-        }
-        $(this).find('.login-error-block').empty();
-        $(this).find('button[type="submit"]').attr('disabled','disabled');
-        showCustomLoader();
-        $.ajax({
-            type:"POST",
-            dataType:"json",
-            url:$(this).attr('action'),
-            data:$(this).serialize(),
-            success: function(data)
-            {
-                hideCustomLoader();
-                $('#mainLoginForm button[type="submit"]').removeAttr("disabled");
-                if(data.status == true)
-                {
-                    window.location.reload();
-                }
-                else
-                {
-                    $('.login-error-block').css('color','red').html(data.errorMsg);
-                }
-            },
-            error:function()
-            {
-                hideCustomLoader();
-                $('#mainLoginForm button[type="submit"]').removeAttr("disabled");
-                $('.login-error-block').css('color','red').html('Some Error Occurred, Try Again!');
-            }
-        });
-    });
-</script>
 <!-- Loader Show and hide script -->
 <script>
     function showCustomLoader()
@@ -85,16 +25,6 @@
         $('.custom-loader-overlay').removeClass('show');
     }
 
-    function checkMembershipValidity(membershipEndDate)
-    {
-        var endDate = new Date(membershipEndDate);
-        var today = new Date();
-        return today > endDate;
-    }
-    function checkMemberLocation(location)
-    {
-        return location == currentLocation;
-    }
 
     function maxLengthCheck(object)
     {
@@ -122,263 +52,323 @@
         return day + ' ' + monthNames[monthIndex] + ' ' + year;
     }
 
-<?php
-    if(isSessionVariableSet($this->isUserSession) === true && isSessionVariableSet($this->userType)
-        && ($this->userType == ROOT_USER || $this->userType == ADMIN_USER || $this->userType == EXECUTIVE_USER) )
-    {
-        ?>
-            function checkExpiredMugs()
-            {
-                $.ajax({
-                    type:"GET",
-                    dataType:"json",
-                    async: true,
-                    url:base_url+'mugclub/getAllExpiredMugs/json',
-                    success: function(data){
-                        if(data.status === true)
-                        {
-                            localStorageUtil.setLocal('foundM1','1',(23 * 60 * 60 * 1000));
-                            $('.notification-indicator').addClass('notification-animate-cls');
-                            $('.notification-indicator-mobile').addClass('notification-animate-cls');
-                            $('.notification-indicator-big').addClass('notification-animate-cls');
-                        }
-                        else
-                        {
-                            localStorageUtil.setLocal('foundM1','0',(23 * 60 * 60 * 1000));
-                        }
-                    },
-                    error: function(){
-
-                    }
-                });
-            }
-
-            function checkExpiringMugs()
-            {
-                $.ajax({
-                    type:"GET",
-                    dataType:"json",
-                    async: true,
-                    url:base_url+'mugclub/getAllExpiringMugs/json/1/week',
-                    success: function(data){
-                        if(data.status === true)
-                        {
-                            localStorageUtil.setLocal('foundM2','1',(23 * 60 * 60 * 1000));
-                            if(!$('.notification-indicator').hasClass('notification-animate-cls'))
-                            {
-                                $('.notification-indicator').addClass('notification-animate-cls');
-                                $('.notification-indicator-mobile').addClass('notification-animate-cls');
-                                $('.notification-indicator-big').addClass('notification-animate-cls');
-                            }
-                        }
-                        else
-                        {
-                            localStorageUtil.setLocal('foundM2','0',(23 * 60 * 60 * 1000));
-                        }
-                    },
-                    error: function(){
-
-                    }
-                });
-            }
-            function checkBirthdayMugs()
-            {
-                $.ajax({
-                    type:"GET",
-                    dataType:"json",
-                    async: true,
-                    url:base_url+'mugclub/getAllBirthdayMugs/json',
-                    success: function(data){
-                        console.log(data);
-                        if(data.status === true)
-                        {
-                            localStorageUtil.setLocal('foundM3','1',(23 * 60 * 60 * 1000));
-                            if(!$('.notification-indicator').hasClass('notification-animate-cls'))
-                            {
-                                $('.notification-indicator').addClass('notification-animate-cls');
-                                $('.notification-indicator-mobile').addClass('notification-animate-cls');
-                                $('.notification-indicator-big').addClass('notification-animate-cls');
-                            }
-                        }
-                        else
-                        {
-                            localStorageUtil.setLocal('foundM3','0',(23 * 60 * 60 * 1000));
-                        }
-                    },
-                    error: function(){
-
-                    }
-                });
-            }
-
-            /*checkExpiredMugs();
-            checkExpiringMugs();
-            checkBirthdayMugs();*/
-            if(localStorageUtil.getLocal('mailCheckDone') == null)
-            {
-                localStorageUtil.setLocal('foundM2','0',(23 * 60 * 60 * 1000));
-                localStorageUtil.setLocal('mailCheckDone','1',(23 * 60 * 60 * 1000));
-                checkExpiredMugs();
-                //checkExpiringMugs();
-                checkBirthdayMugs();
-                //write for recurring expired mugs
-            }
-            else if(localStorageUtil.getLocal('mailCheckDone') == '0') {
-                localStorageUtil.setLocal('foundM2','0',(23 * 60 * 60 * 1000));
-                localStorageUtil.setLocal('mailCheckDone','1',(23 * 60 * 60 * 1000));
-                checkExpiredMugs();
-                //checkExpiringMugs();
-                checkBirthdayMugs();
-            }
-            else if(localStorageUtil.getLocal('foundM1') == '1' ||
-                    localStorageUtil.getLocal('foundM3') == '1')
-            {
-                localStorageUtil.setLocal('foundM2','0',(23 * 60 * 60 * 1000));
-                $('.notification-indicator').addClass('notification-animate-cls');
-                $('.notification-indicator-mobile').addClass('notification-animate-cls');
-                $('.notification-indicator-big').addClass('notification-animate-cls');
-            }
-            else
-            {
-                localStorageUtil.setLocal('foundM2','0',(23 * 60 * 60 * 1000));
-                $('.notification-indicator').removeClass('notification-animate-cls');
-                $('.notification-indicator-mobile').removeClass('notification-animate-cls');
-                $('.notification-indicator-big').removeClass('notification-animate-cls');
-            }
-
-            function removeNotifications()
-            {
-                if(localStorageUtil.getLocal('foundMails') != null)
-                {
-                    localStorageUtil.delLocal('foundMails');
-                }
-                if(localStorageUtil.getLocal('mailCheckDone') != null)
-                {
-                    localStorageUtil.delLocal('mailCheckDone');
-                }
-            }
-
-        <?php
-    }
-?>
-
-$(document).on('click','.homePage .request-otp', function(){
-
-    var loc = $('#locSelect option:selected').val();
-    if(loc == '')
-    {
-        bootbox.alert('Please Select A Location!');
-        return false;
-    }
-    $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        url:base_url+'generateOtp',
-        data: {loc:loc},
-        success: function(data){
-            if(data.status == true)
-            {
-                $('#locSelect').addClass('hide');
-                $('.loclabel').html('Selected Location: '+$('#locSelect option:selected').text());
-                $('.homePage .my-timer').removeClass('hide');
-                $('.homePage #mainLoginForm').find('input[name="mobNum"]').val(data.mobNum);
-                $('.homePage .request-otp').addClass('hide');
-                $('.homePage #mainLoginForm').removeClass('hide');
-                var min = 0;
-                var sec = 0;
-                var timer = setInterval(function(){
-                    sec +=1;
-                    if(sec == 60)
-                    {
-                        min += 1;
-                        sec = 0;
-                    }
-                    $('.homePage .my-timer').html('Wait: '+min+' : '+sec);
-                    if(min >= 2)
-                    {
-                        clearInterval(timer);
-                    }
-                },1000);
-                setTimeout(function(){
-                    $('#locSelect').removeClass('hide');
-                    $('.homePage .request-otp').removeClass('hide');
-                    $('.homePage .my-timer').addClass('hide');
-                    $('.loclabel').html('Select Location: ');
-                    //$('#mainLoginForm').addClass('hide');
-                    clearInterval(timer);
-                },(2*60*1000));
-            }
-            else
-            {
-                $('.homePage .login-error-block').css('color','red').html(data.errorMsg);
-            }
-        },
-        error: function(){
-            bootbox.alert('Some Error Occurred!');
-        }
-    });
-});
-
-    $(document).on('click','.loginPage .request-otp', function(){
-        if($('.loginPage input[name="mobEmail"]').val() == '')
-        {
-            bootbox.alert('Field Required!');
-            return false;
-        }
-        if(!$.isNumeric($('.loginPage input[name="mobEmail"]').val()) && !isEmailValid($('.loginPage input[name="mobEmail"]').val()))
-        {
-            bootbox.alert('Email Invalid!');
-            return false;
-        }
-        $.ajax({
-            type: 'POST',
-            dataType: 'json',
-            url:base_url+'getOtp',
-            data: {mobEmail: $('.loginPage input[name="mobEmail"]').val()},
-            success: function(data){
-                if(data.status == true)
-                {
-                    $('.loginPage .login-error-block').html('').addClass('hide');
-                    $('.loginPage .my-timer').removeClass('hide');
-                    $('.loginPage #mainLoginForm').find('input[name="mobNum"]').val(data.mobNum);
-                    $('.loginPage .request-otp').addClass('hide');
-                    $('.loginPage .the-email-panel').addClass('hide');
-                    $('.loginPage #mainLoginForm').removeClass('hide');
-                    var min = 0;
-                    var sec = 0;
-                    var timer = setInterval(function(){
-                        sec +=1;
-                        if(sec == 60)
-                        {
-                            min += 1;
-                            sec = 0;
-                        }
-                        $('.loginPage .my-timer').html('Wait(2 mins): '+min+' : '+sec);
-                        if(min >= 2)
-                        {
-                            clearInterval(timer);
-                        }
-                    },1000);
-                    setTimeout(function(){
-                        $('.loginPage .request-otp').removeClass('hide');
-                        $('.loginPage .my-timer').addClass('hide');
-                        //$('#mainLoginForm').addClass('hide');
-                        clearInterval(timer);
-                    },(2*60*1000));
-                }
-                else
-                {
-                    $('.loginPage .login-error-block').css('color','red').html(data.errorMsg);
-                }
-            },
-            error: function(){
-                bootbox.alert('Some Error Occurred!');
-            }
-        });
-    });
-
     function isEmailValid(email) {
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return regex.test(email);
     }
+</script>
+<script>
+    function showProgressBar()
+    {
+        $('.progress').removeClass('hide');
+    }
+    function hideProgressBar()
+    {
+        $('.progress').addClass('hide');
+    }
+    function saveErrorLog(errorTxt)
+    {
+        $.ajax({
+            type:'POST',
+            dataType:'json',
+            url:base_url+'home/saveErrorLog',
+            data:{errorTxt: errorTxt},
+            success: function(data){},
+            error: function(){}
+        });
+    }
+    var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        // If we need pagination
+        pagination: '.swiper-pagination',
+        effect: 'slide'
+    });
+
+    var getDiscount= 0;
+    var finalAmt = 8000;
+    var couponApplied = false;
+    //Angular validation
+    var app = angular.module('beerOlympicApp', []);
+    app.controller('validateCtrl', function($scope, $http) {
+        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+        $scope.totalBus = 0;
+        $scope.athleteAmt = 8000;
+        $scope.busCost = 800;
+        $scope.isReqPending = false;
+        $scope.calcAndPay = function()
+        {
+            if($scope.ifBusRequired)
+            {
+                if($scope.busForm.busBookerName.$invalid )
+                {
+                    $('#error-alert').attr('data-message','Name is Required!').click();
+                    return false;
+                }
+                if($scope.busForm.busBookerMobile.$invalid )
+                {
+                    $('#error-alert').attr('data-message','Valid 10 Digit Mobile Number is Required!').click();
+                    return false;
+                }
+                if($scope.busForm.busBookerEmail.$invalid )
+                {
+                    $('#error-alert').attr('data-message','Valid Email is Required!').click();
+                    return false;
+                }
+                if($scope.busForm.busBookerSeats.$invalid)
+                {
+                    $('#error-alert').attr('data-message','Number of Seats are Required!').click();
+                    return false;
+                }
+                if(!$('#tncCheck').is(":checked"))
+                {
+                    $('#error-alert').attr('data-message','Please Agree to Terms!').click();
+                    return false;
+                }
+
+                if($scope.isReqPending === false)
+                {
+                    $scope.isReqPending = true;
+                    showProgressBar();
+                    $.ajax({
+                        type:'POST',
+                        dataType:'json',
+                        url:$('#busForm').attr('action'),
+                        data: $('#busForm').serialize(),
+                        success: function(data)
+                        {
+                            hideProgressBar();
+                            $scope.isReqPending = false;
+                            if(data.status === true)
+                            {
+                                window.location.href=data.payUrl;
+                            }
+                            else
+                            {
+                                $('#error-alert').attr('data-message',data.errorMsg).click();
+                            }
+
+                        },
+                        error:function(xhr, status, error)
+                        {
+                            $scope.isReqPending = false;
+                            hideProgressBar();
+                            $('#error-alert').attr('data-message','Some Error Occurred!').click();
+                            var err = '<pre>'+xhr.responseText+'</pre>';
+                            saveErrorLog(err);
+                        }
+                    });
+                }
+                else
+                {
+                    $('#error-alert').attr('data-message','Please Wait for the Previous Request To Finish!').click();
+                }
+            }
+            else
+            {
+                if($scope.captainForm.$valid)
+                {
+                    if(!$('#tncCheck').is(":checked"))
+                    {
+                        $('#error-alert').attr('data-message','Please Agree to Terms!').click();
+                        return false;
+                    }
+
+                    if($scope.isReqPending === false)
+                    {
+                        $scope.isReqPending = true;
+                        showProgressBar();
+                        $.ajax({
+                            type:'POST',
+                            dataType:'json',
+                            url:$('#captainForm').attr('action'),
+                            data: $('#captainForm').serialize(),
+                            success: function(data)
+                            {
+                                hideProgressBar();
+                                $scope.isReqPending = false;
+                                if(data.status === true)
+                                {
+                                    window.location.href=data.payUrl;
+                                }
+                                else
+                                {
+                                    $('#error-alert').attr('data-message',data.errorMsg).click();
+                                }
+
+                            },
+                            error:function(xhr, status, error)
+                            {
+                                $scope.isReqPending = false;
+                                hideProgressBar();
+                                $('#error-alert').attr('data-message','Some Error Occurred!').click();
+                                var err = '<pre>'+xhr.responseText+'</pre>';
+                                saveErrorLog(err);
+                            }
+                        });
+                    }
+                    else
+                    {
+                        $('#error-alert').attr('data-message','Please Wait for the Previous Request To Finish!').click();
+                    }
+
+                }
+                else
+                {
+                    $('#error-alert').click();
+                }
+            }
+        };
+        $scope.addToTotal = function(busCheck)
+        {
+            if(busCheck)
+            {
+                $scope.totalBus += 1;
+            }
+            else
+            {
+                $scope.totalBus -= 1;
+                if($scope.totalBus < 0)
+                {
+                    $scope.totalBus= 0;
+                }
+            }
+            if($scope.totalBus != 0)
+            {
+                $('#team-wagon-details').html('Wagon Price ('+$scope.totalBus+' x Rs. 800)');
+                var fTotal = $scope.athleteAmt + ($scope.totalBus * $scope.busCost);
+                $('#team-wagon-price').html('Rs. '+($scope.totalBus * $scope.busCost));
+                if(couponApplied)
+                {
+                    finalAmt = fTotal - getDiscount;
+                }
+                else
+                {
+                    finalAmt = fTotal;
+                }
+                $('#final-total').html('Rs. '+finalAmt);
+            }
+            else
+            {
+                $('#team-wagon-details').html('');
+                $('#team-wagon-price').html('');
+                if(couponApplied)
+                {
+                    $('#final-total').html('Rs. '+($scope.athleteAmt - getDiscount));
+                }
+                else
+                {
+                    //$('#finalAmt').val($scope.athleteAmt);
+                    $('#final-total').html('Rs. '+$scope.athleteAmt);
+                }
+            }
+        };
+        $scope.checkCoupon = function()
+        {
+            if($scope.couponForm.couponC.$pristine || $scope.couponForm.couponC.$invalid)
+            {
+                $('#error-alert').attr('data-message','Please Provide the Coupon Code!').click();
+            }
+            else
+            {
+                var coupon = $('#couponC').val();
+                showProgressBar();
+                $.ajax({
+                    type:'POST',
+                    dataType:'json',
+                    url:base_url+'checkCoupon',
+                    data: {couponCode: coupon},
+                    success: function(data){
+                        hideProgressBar();
+                        if(data.status === true)
+                        {
+                            couponApplied = true;
+                            $('#couponCode').val(coupon);
+
+                            if(data.couponType.toLowerCase() == 'percentage')
+                            {
+                                //Calculating percentage discount on Team base price i.e. 8000
+                                getDiscount = (Number(data.couponCost) / 100) * $scope.athleteAmt;
+                                $('.coupon-panel #coupon-details').html('Coupon ('+data.couponCost+'% off)');
+                                $('#coupon-discount').html('-(Rs. '+getDiscount+')');
+                                finalAmt = finalAmt - getDiscount;
+                                $('#final-total').html('Rs. '+finalAmt);
+                            }
+
+                            $('#coupon-field').addClass('hide');
+                            $('.coupon-panel .only-coupon').html(coupon);
+                            $('.coupon-panel').removeClass('hide');
+                        }
+                        else
+                        {
+                            $('#error-alert').attr('data-message',data.errorMsg).click();
+                        }
+                    },
+                    error:function(xhr, status, error)
+                    {
+                        hideProgressBar();
+                        $('#error-alert').attr('data-message','Some Error Occurred!').click();
+                        var err = '<pre>'+xhr.responseText+'</pre>';
+                        saveErrorLog(err);
+                    }
+                });
+            }
+        };
+        $scope.calWagonPrice = function()
+        {
+            var seatsVal = $('#busBookerSeats').val();
+
+            if(seatsVal != '' && seatsVal != 0)
+            {
+                var wagonFinal = seatsVal * $scope.busCost;
+                $('#bus-subtotal').html('Seats ('+seatsVal+' x Rs. '+$scope.busCost+')');
+                $('#final-bus-total').html('Rs. '+wagonFinal);
+                $('#final-total').html('Rs. '+wagonFinal);
+            }
+        };
+    });
+
+    $(document).on('click','.remove-coupon', function(){
+        $('.coupon-panel').addClass('hide');
+        $('#coupon-discount').html('');
+        $('#couponCheck').click();
+        //input field
+        $('#couponCode').val('');
+        $('#coupon-field').removeClass('hide');
+        //$('#coupon-strike').html('').addClass('hide');
+        finalAmt = finalAmt + getDiscount;
+        $('#final-total').html('Rs. '+finalAmt);
+        couponApplied = false;
+    });
+
+    $(document).ready(function(){
+        if(typeof $('#payStatus').val() !== 'undefined')
+        {
+            if($('#payStatus').val() == '1')
+            {
+                $('#alert-dialog .pmd-card-title-text').html('Thank You!');
+            }
+            else
+            {
+                $('#alert-dialog .pmd-card-title-text').html('Error!');
+            }
+            $('#alert-dialog .modal-body').html($('#payText').val());
+            $('#alert-modal').click();
+        }
+    });
+    $(document).on('click','#only-book-wagon', function(){
+        $('html, body').animate({
+            scrollTop: $("#wagon-accordion").offset().top
+        }, 1000);
+    });
+    $(document).on('click','.beer-tnc', function(){
+        $('#alert-dialog .pmd-card-title-text').html('Terms And Conditions');
+        $('#alert-dialog .modal-body').html('All events are a race against time<br>'+
+        'Please remember this is just a game and not a life altering scenario<br>'+
+        'Each game has a referee, and the referee is always right<br>'+
+        'Also you are definitely drunk, the referee is not.<br>'+
+            'The games are divided into two parts - Eliminations and Finals. The elimination rounds will run from 11 am to 3 pm and the finals will run from 4 pm to 6 pm.<br>'+
+            'All four team members will play all five games. Substitution is not allowed.');
+        $('#alert-modal').click();
+    });
 </script>

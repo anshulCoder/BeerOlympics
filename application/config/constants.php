@@ -96,11 +96,6 @@ defined('DATE_FORMAT_GRAPH_UI')   OR define('DATE_FORMAT_GRAPH_UI', 'j F');
 defined('DATE_MAIL_FORMAT_UI')   OR define('DATE_MAIL_FORMAT_UI', 'jS M Y');
 defined('DATE_TIME_FORMAT_UI')   OR define('DATE_TIME_FORMAT_UI', 'D, jS F, Y g:i a');
 
-/* Mail Type */
-defined('EXPIRED_MAIL') OR define('EXPIRED_MAIL',1);
-defined('EXPIRING_MAIL') OR define('EXPIRING_MAIL',2);
-defined('BIRTHDAY_MAIL') OR define('BIRTHDAY_MAIL',3);
-defined('CUSTOM_MAIL') OR define('CUSTOM_MAIL',0);
 
 /* User Type */
 defined('ROOT_USER') OR define('ROOT_USER',0);
@@ -114,9 +109,6 @@ defined('OFFERS_USER') OR define('OFFERS_USER',6);
 /*Active or not*/
 defined('ACTIVE')   OR define('ACTIVE', 1);
 defined('NOT_ACTIVE')   OR define('NOT_ACTIVE', 0);
-defined('EVENT_WAITING')   OR define('EVENT_WAITING', 0);
-defined('EVENT_APPROVED')   OR define('EVENT_APPROVED', 1);
-defined('EVENT_DECLINED')   OR define('EVENT_DECLINED', 2);
 
 /* API Feeds */
 defined('TWITTER_API') OR define('TWITTER_API','https://api.twitter.com/1.1/');
@@ -126,30 +118,14 @@ defined('CONSUMER_SECRET') OR define('CONSUMER_SECRET','T5nSoTaf8rgpXYbWqiLMGSFs
 defined('ACCESS_TOKEN') OR define('ACCESS_TOKEN','15804491-nkhDglNJ5uNSBGixul3kwrnQJWCkZA9tYLuUM3yQk');
 defined('ACCESS_SECRET') OR define('ACCESS_SECRET','eRdLrS6eAwj07Ul5264YUZLf0AXCP9rbicAlXsLFLDjMB');
 defined('BEARER_TOKEN') OR define('BEARER_TOKEN','AAAAAAAAAAAAAAAAAAAAAFhQegAAAAAAePdzbMWF5F%2FfVU5Ph09OIb22dnE%3D7qKzt9ZZQ6IwfUErgznCPq6AcEmIZqYTnKAamzks6ojV72Nobn');
-//defined('FACEBOOK_TOKEN') OR define('FACEBOOK_TOKEN','EAAUZBjn6HCmQBAGRccGXJCh7iVjMz7S1G0RdyszbH81ZAndaRZBOWt7S2M4CIPIWm0oplVisZAevWCqALhluARjZBGb2kELD4l6cJAwAuQgh9RtOKECzcPpsDpUe2ZA9uXeIIFUsXiFaquCjcdlZAFYpXmb99DIBzQZD');
-defined('FACEBOOK_TOKEN') OR define('FACEBOOK_TOKEN','EAAJCOvplqxQBADbta5ZCpQmr3U4E1YjQhZBxCxdc3Sw0gvWlJTGvg1LrEADFhE41MSAT8IYa3Cfp7FvLNhk0i0GKTKsB8sPNwsF3ZBeUNUh0imRLSpZBMDaG1jiNKmXk4LF1miZC1bNzvjbneZAZAnA1XMGX7qWZCZBAZD');
+
 defined('INSTA_API_KEY') OR define('INSTA_API_KEY','362388bd44886b30aa0d9973d7b99794');
 defined('INSTA_AUTH_TOKEN') OR define('INSTA_AUTH_TOKEN','2e8a6cb6ddb931a722e05d2c99dc3888');
-defined('GOOGLE_API_KEY') OR define('GOOGLE_API_KEY','AIzaSyBG3wamyMbQqRlqysulunOuPvv3_51BmpI');
-defined('BCJUKEBOX_CLIENT') OR define('BCJUKEBOX_CLIENT','UUN5m270I7nxuuBDzukIVtAV0QxL5UQEV1FaYmUg');
-defined('TEXTLOCAL_API') OR define('TEXTLOCAL_API','cFIpDcHmYnc-mdteI9XWFa41zNZSq9Z3crlHtQAZCb');
 
 
-/* Image Paths for Fnb*/
-defined('FOOD_PATH_THUMB') OR define('FOOD_PATH_THUMB','uploads/food/thumb/');
-defined('FOOD_PATH_NORMAL') OR define('FOOD_PATH_NORMAL','uploads/food/');
-defined('BEVERAGE_PATH_THUMB') OR define('BEVERAGE_PATH_THUMB','uploads/beverage/thumb/');
-defined('BEVERAGE_PATH_NORMAL') OR define('BEVERAGE_PATH_NORMAL','uploads/beverage/');
-defined('EVENT_PATH_THUMB') OR define('EVENT_PATH_THUMB','uploads/events/thumb/');
-defined('ITEM_FOOD') OR define('ITEM_FOOD','1');
-defined('ITEM_BEVERAGE') OR define('ITEM_BEVERAGE','2');
-defined('MOBILE_URL') OR define('MOBILE_URL','https://doolally.in/');
-
-/* Event Cost Types */
-defined('EVENT_FREE') OR define('EVENT_FREE','1');
-defined('EVENT_PAID') OR define('EVENT_PAID','2');
-defined('EVENT_PAID_NO_PINT') OR define('EVENT_PAID_NO_PINT','3');
-defined('EVENT_DOOLALLY_FEE') OR define('EVENT_DOOLALLY_FEE','4');
-
-defined('DEFAULT_SENDER_EMAIL') OR define('DEFAULT_SENDER_EMAIL','happeningevents@brewcraftsindia.com');
+defined('DEFAULT_SENDER_EMAIL') OR define('DEFAULT_SENDER_EMAIL','events@brewcraftsindia.com');
 defined('DEFAULT_SENDER_PASS') OR define('DEFAULT_SENDER_PASS','doolally123');
+
+defined('WAGON_PRICE')   OR define('WAGON_PRICE', 800);
+defined('FINAL_COUPON_AMOUNT')   OR define('FINAL_COUPON_AMOUNT', 6000);
+defined('INITIAL_TEAM_AMOUNT')   OR define('INITIAL_TEAM_AMOUNT', 8000);
