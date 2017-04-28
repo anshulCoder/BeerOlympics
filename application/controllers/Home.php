@@ -104,10 +104,7 @@ class Home extends MY_Controller {
         if(isset($post['ifBusRequiredCap']) && isStringSet($post['ifBusRequiredCap']))
         {
             $capData['ifBusRequired'] = $post['ifBusRequiredCap'];
-            if(!$isCouponSet)
-            {
-                $finalAmt += WAGON_PRICE;
-            }
+            $finalAmt += WAGON_PRICE;
         }
 
         $captainId = $this->home_model->saveCaptainRecord($capData);
@@ -124,10 +121,7 @@ class Home extends MY_Controller {
             if(isset($post['ifBusRequired'.$i]) && isStringSet($post['ifBusRequired'.$i]))
             {
                 $athleteData['ifBusRequired'] = $post['ifBusRequired'.$i];
-                if(!$isCouponSet)
-                {
-                    $finalAmt += WAGON_PRICE;
-                }
+                $finalAmt += WAGON_PRICE;
             }
 
             $this->home_model->saveAthleteRecord($athleteData);
@@ -362,7 +356,8 @@ class Home extends MY_Controller {
                         {
                             $busMail = array(
                                 'busName' => $mailData['teamName'],
-                                'busSeats' => $busCount
+                                'busSeats' => $busCount,
+                                'busEmail' => $mailData['capEmail']
                             );
                             $this->sendemail_library->teamBusSendMail($busMail);
                         }
@@ -432,6 +427,27 @@ class Home extends MY_Controller {
                 break;
         }
         return $finalAmt;
+    }
+
+    public function sendOlympicsMails()
+    {
+        $mails = $this->home_model->getAllPendingMails();
+
+        if(isset($mails) && myIsArray($mails))
+        {
+            $attachment = array();
+            foreach($mails as $key => $row)
+            {
+                $attachment = explode(',',$row['attachments']);
+                $this->sendemail_library->sendWaitingEmail($row['sendTo'],$row['ccList'],$row['sendFrom'],
+                    DEFAULT_SENDER_PASS,$row['sendFromName'],$row['replyTo'],$row['mailSubject'],
+                    $row['mailBody'],$attachment);
+                $mailData = array(
+                    'sendStatus' => 'done'
+                );
+                $this->home_model->updateMailDetails($mailData,$row['id']);
+            }
+        }
     }
 
 }

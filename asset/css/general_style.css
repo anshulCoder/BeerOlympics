@@ -408,6 +408,20 @@ input::-webkit-inner-spin-button {
     margin-top:5px;
     margin-bottom:5px;
 }
+.beerHome .swiper-button-next, .beerHome .swiper-button-prev
+{
+    top:80%;
+    height:30px;
+    background-image:url(../images/right-arrow.jpg);
+}
+.beerHome .swiper-button-prev
+{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
 /* Custom Progress bar */
 /* Progress Bar */
 .progress {

@@ -98,6 +98,11 @@ class Home_Model extends CI_Model
         $this->db->insert('swiftmailerlogs', $post);
         return true;
     }
+    public function saveWaitMailLog($post)
+    {
+        $this->db->insert('pendingmailsmaster', $post);
+        return true;
+    }
 
     public function saveBusRecord($details)
     {
@@ -105,4 +110,20 @@ class Home_Model extends CI_Model
         $insertId = $this->db->insert_id();
         return $insertId;
     }
+
+    public function getAllPendingMails()
+    {
+        $query = "SELECT * FROM pendingmailsmaster WHERE sendStatus LIKE 'waiting'";
+
+        $result = $this->db->query($query)->result_array();
+        return $result;
+    }
+    public function updateMailDetails($details, $mailId)
+    {
+        $this->db->where('id',$mailId);
+        $this->db->update('pendingmailsmaster', $details);
+        return true;
+    }
+
 }
+

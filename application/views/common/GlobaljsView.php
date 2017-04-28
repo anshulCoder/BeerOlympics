@@ -82,7 +82,12 @@
         direction: 'horizontal',
         // If we need pagination
         pagination: '.swiper-pagination',
-        effect: 'slide'
+        effect: 'slide',
+        keyboardControl: true,
+        autoplay:3000,
+        autoplayDisableOnInteraction:true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
     });
 
     var getDiscount= 0;
@@ -235,7 +240,7 @@
             }
             if($scope.totalBus != 0)
             {
-                $('#team-wagon-details').html('Wagon Price ('+$scope.totalBus+' x Rs. 800)');
+                $('#team-wagon-details').html('Doolally Wagon ticket ('+$scope.totalBus+' x Rs. 800)');
                 var fTotal = $scope.athleteAmt + ($scope.totalBus * $scope.busCost);
                 $('#team-wagon-price').html('Rs. '+($scope.totalBus * $scope.busCost));
                 if(couponApplied)
@@ -289,7 +294,7 @@
                             {
                                 //Calculating percentage discount on Team base price i.e. 8000
                                 getDiscount = (Number(data.couponCost) / 100) * $scope.athleteAmt;
-                                $('.coupon-panel #coupon-details').html('Coupon ('+data.couponCost+'% off)');
+                                $('.coupon-panel #coupon-details').html('Coupon (Rs. '+getDiscount+' off)');
                                 $('#coupon-discount').html('-(Rs. '+getDiscount+')');
                                 finalAmt = finalAmt - getDiscount;
                                 $('#final-total').html('Rs. '+finalAmt);

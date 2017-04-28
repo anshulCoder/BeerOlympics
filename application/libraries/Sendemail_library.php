@@ -674,7 +674,7 @@ class Sendemail_library
         $replyTo = 'belinda@brewcraftsindia.com';
 
         $cc = 'tresha@brewcraftsindia.com';
-        if($userData['busCount'] > 0 )
+        if($userData['busSeats'] > 0 )
         {
             $cc .= ',priyanka@brewcraftsindia.com,saha@brewcraftsindia.com';
         }
@@ -730,6 +730,23 @@ class Sendemail_library
 
     public function sendEmail($to, $cc = '', $from, $fromPass, $fromName,$replyTo, $subject, $content, $attachment = array())
     {
+        $logDetails = array(
+            'messageId' => null,
+            'sendTo' => $to,
+            'sendFrom' => $from,
+            'sendFromName' => $fromName,
+            'ccList' => $cc,
+            'replyTo' => $replyTo,
+            'mailSubject' => $subject,
+            'mailBody' => $content,
+            'attachments' => '',
+            'sendStatus' => 'waiting',
+            'failIds' => null,
+            'sendDateTime' => null
+        );
+
+        $this->CI->home_model->saveWaitMailLog($logDetails);
+        return true;
         //Create the Transport
         /*$CI =& get_instance();
         $CI->load->library('swift_mailer/swift_required.php');*/
@@ -832,6 +849,88 @@ class Sendemail_library
         $CI->email->subject($subject);
         $CI->email->message($content);
         return $CI->email->send();*/
+    }
+
+    public function sendWaitingEmail($to, $cc = '', $from, $fromPass, $fromName,$replyTo, $subject, $content, $attachment = array())
+    {
+
+        require_once APPPATH.'libraries/swift_mailer/swift_required.php';
+
+        $transport = Swift_SmtpTransport::newInstance ('smtp.gmail.com', 465, 'ssl')
+            ->setUsername($from)
+            ->setPassword($fromPass);
+        //$transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
+
+        $mailer = Swift_Mailer::newInstance($transport);
+
+        //Create a message
+        $message = Swift_Message::newInstance($subject)
+            ->setSubject($subject)
+            ->setReplyTo($replyTo)
+            ->setReadReceiptTo($from)
+            //->setCc($cc)
+            ->setFrom(array($from => $fromName))
+            ->setSender($replyTo)
+            ->setTo($to) ->setBody($content, 'text/html');
+
+        if($cc != '')
+        {
+            $message->setBcc(explode(',',$cc));
+        }
+        if(isset($attachment) && myIsMultiArray($attachment))
+        {
+            foreach($attachment as $key)
+            {
+                if($key != '')
+                {
+                    $message->attach(Swift_Attachment::fromPath($key));
+                }
+            }
+        }
+        //$message->attach($attachment);
+        //Send the message
+        $failedId = array();
+        $status = 'Success';
+        $errorMsg = implode(',',$failedId);
+
+        try
+        {
+            $result = $mailer->send($message,$failedId);
+            if(!$result)
+            {
+                $status = 'Failed';
+                $errorMsg = implode(',',$failedId);
+            }
+        }
+        catch(Swift_TransportException $st)
+        {
+            $status = 'Login Failed';
+            $errorMsg = $st->getMessage();
+        }
+        catch(Exception $ex)
+        {
+            $status = 'Failed';
+            $errorMsg = $ex->getMessage();
+        }
+
+
+        $logDetails = array(
+            'messageId' => $message->getId(),
+            'sendTo' => $to,
+            'sendFrom' => $from,
+            'sendFromName' => $fromName,
+            'ccList' => $cc,
+            'replyTo' => $replyTo,
+            'mailSubject' => $subject,
+            'mailBody' => $content,
+            'attachments' => implode(',',$attachment),
+            'sendStatus' => $status,
+            'failIds' => $errorMsg,
+            'sendDateTime' => date('Y-m-d H:i:s')
+        );
+
+        $this->CI->home_model->saveSwiftMailLog($logDetails);
+        return $status;
     }
 
     public function generateBreakfastTwoCode($mugId)

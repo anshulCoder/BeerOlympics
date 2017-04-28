@@ -161,7 +161,7 @@
                                                 <div class="media-body">
                                                     <h4 class="common-black-txt"><strong>Beer Pong</strong></h4>
                                                     <p class="text-muted">
-                                                        Beer filled cups arranged in a triangular shape at either end of a table; the objective of the game is simple: throw the ping pong balls in your opponent’s beer cups and make them drink.<br>
+                                                        Beer filled cups arranged in a triangular shape at either end of a table; the objective of the game is simple: throw the ping pong balls in your opponent’s beer cups and make them drink.<br><br>
                                                         So drink fast, shoot straight. Easier said than done, since you’re seeing everything in triplicate.
                                                     </p>
                                                     <br>
@@ -265,6 +265,9 @@
                                 </div>
                                 <!-- If we need pagination -->
                                 <div class="swiper-pagination"></div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                             </div>
                         </div>
                     </div>
@@ -359,7 +362,7 @@
                                     <div class="col-sm-8 col-xs-12">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.teamName.$invalid && captainForm.teamName.$touched}">
                                             <label for="teamName" class="control-label">Team Name</label>
-                                            <input type="text" id="teamName" name="teamName" tabindex="0"
+                                            <input type="text" id="teamName" name="teamName" tabindex="1"
                                                    placeholder="Team Name" ng-model="teamName" class="form-control" pattern="[a-zA-Z\s]+" required/>
                                         </div>
                                     </div>
@@ -369,22 +372,22 @@
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capName.$invalid && captainForm.capName.$touched}">
                                             <label for="capName" class="control-label">Name</label>
-                                            <input type="text" id="capName" name="capName" tabindex="1"
+                                            <input type="text" id="capName" name="capName" tabindex="2"
                                                    placeholder="Full Name" ng-model="capName" class="form-control" pattern="[a-zA-Z\s]+" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capEmail.$invalid && captainForm.capEmail.$touched}">
                                             <label for="capEmail" class="control-label">Email</label>
-                                            <input type="email" id="capEmail" name="capEmail" tabindex="3"
+                                            <input type="email" id="capEmail" name="capEmail" tabindex="4"
                                                    placeholder="name@example.com" ng-model="capEmail" class="form-control" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capCity.$invalid && captainForm.capCity.$touched}">
                                             <label for="capCity" class="control-label">City</label>
-                                            <input type="text" id="capCity" name="capCity" tabindex="5"
+                                            <input type="text" id="capCity" name="capCity" tabindex="6"
                                                    placeholder="Your City" ng-model="capCity" class="form-control" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capTshirt.$invalid && captainForm.capTshirt.$touched}">
                                             <label for="capTshirt" class="control-label">T-Shirt size</label>
-                                            <select name="capTshirt" id="capTshirt" tabindex="7" ng-model="capTshirt" class="form-control" required>
+                                            <select name="capTshirt" id="capTshirt" tabindex="8" ng-model="capTshirt" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <option value="36 S">36 S</option>
                                                 <option value="38 M">38 M</option>
@@ -397,13 +400,13 @@
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capAge.$invalid && captainForm.capAge.$touched}">
                                             <label for="capAge" class="control-label">Age</label>
-                                            <input type="number" id="capAge" name="capAge" tabindex="2"
+                                            <input type="number" id="capAge" name="capAge" tabindex="3"
                                                    min="21" max="99" placeholder="Age (must be above 21)" ng-model="capAge" class="form-control" required/>
                                             <!--<p class="help-block" ng-show="captainForm.capAge.$invalid && captainForm.capAge.$touched">Age Must be Above 21</p>-->
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capMob.$invalid && captainForm.capMob.$touched}">
                                             <label for="capMob" class="control-label">Mobile Number</label>
-                                            <input type="number" id="capMob" name="capMob" tabindex="4"
+                                            <input type="number" id="capMob" name="capMob" tabindex="5"
                                                    ng-minlength="10" ng-maxlength="10" placeholder="10-Digit mobile number" ng-model="capMob" class="form-control" required/>
                                             <!--<p class="help-block" ng-show="(captainForm.capMob.$error.minlength || captainForm.capMob.$error.maxlength) && captainForm.capMob.$dirty">
                                                 Valid 10 Digit Mobile Number Required
@@ -411,7 +414,7 @@
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capZip.$invalid && captainForm.capZip.$touched}">
                                             <label for="capZip" class="control-label">Zip</label>
-                                            <input type="number" id="capZip" name="capZip" tabindex="6"
+                                            <input type="number" id="capZip" name="capZip" tabindex="7"
                                                    ng-minlength="6" ng-maxlength="6" placeholder="6-Digit pin code" ng-model="capZip" class="form-control" required/>
                                             <!--<p class="help-block" ng-show="(captainForm.capZip.$error.minlength || captainForm.capZip.$error.maxlength) && captainForm.capZip.$dirty">
                                                 Enter Valid 6 digit Pin Code
@@ -431,12 +434,12 @@
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName1.$invalid && captainForm.athName1.$touched}">
                                             <label for="athName1" class="control-label">Name</label>
-                                            <input type="text" id="athName1" name="athName1" tabindex="8"
+                                            <input type="text" id="athName1" name="athName1" tabindex="9"
                                                    placeholder="Full Name" ng-model="athName1" pattern="[a-zA-Z\s]+" class="form-control" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athTshirt1.$invalid && captainForm.athTshirt1.$touched}">
                                             <label for="athTshirt1" class="control-label">T-Shirt size</label>
-                                            <select name="athTshirt1" id="athTshirt1" tabindex="10" ng-model="athTshirt1" class="form-control" required>
+                                            <select name="athTshirt1" id="athTshirt1" tabindex="11" ng-model="athTshirt1" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <option value="36 S">36 S</option>
                                                 <option value="38 M">38 M</option>
@@ -449,7 +452,7 @@
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athAge1.$invalid && captainForm.athAge1.$touched}">
                                             <label for="athAge1" class="control-label">Age</label>
-                                            <input type="number" id="athAge1" min="21" max="99" name="athAge1" tabindex="9"
+                                            <input type="number" id="athAge1" min="21" max="99" name="athAge1" tabindex="10"
                                                    placeholder="Age (must be above 21)" ng-model="athAge1" class="form-control" required/>
                                             <!--<p class="help-block" ng-show="captainForm.athAge1.$invalid && captainForm.athAge1.$touched">Age Must be Above 21</p>-->
                                         </div>
@@ -467,12 +470,12 @@
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName2.$invalid && captainForm.athName2.$touched}">
                                             <label for="athName2" class="control-label">Name</label>
-                                            <input type="text" id="athName2" name="athName2" tabindex="11"
+                                            <input type="text" id="athName2" name="athName2" tabindex="12"
                                                    placeholder="Full Name" ng-model="athName2" pattern="[a-zA-Z\s]+" class="form-control" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athTshirt2.$invalid && captainForm.athTshirt2.$touched}">
                                             <label for="athTshirt2" class="control-label">T-Shirt size</label>
-                                            <select name="athTshirt2" id="athTshirt2" tabindex="13" ng-model="athTshirt2" class="form-control" required>
+                                            <select name="athTshirt2" id="athTshirt2" tabindex="14" ng-model="athTshirt2" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <option value="36 S">36 S</option>
                                                 <option value="38 M">38 M</option>
@@ -485,7 +488,7 @@
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athAge2.$invalid && captainForm.athAge2.$touched}">
                                             <label for="athAge2" class="control-label">Age</label>
-                                            <input type="number" id="athAge2" min="21" max="99" name="athAge2" tabindex="12"
+                                            <input type="number" id="athAge2" min="21" max="99" name="athAge2" tabindex="13"
                                                    placeholder="Age (must be above 21)" ng-model="athAge2" class="form-control" required/>
                                             <!--<p class="help-block" ng-show="captainForm.athAge2.$invalid && captainForm.athAge2.$touched">Age Must be Above 21</p>-->
                                         </div>
@@ -503,12 +506,12 @@
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName3.$invalid && captainForm.athName3.$touched}">
                                             <label for="athName3" class="control-label">Name</label>
-                                            <input type="text" id="athName3" name="athName3" tabindex="14"
+                                            <input type="text" id="athName3" name="athName3" tabindex="15"
                                                    placeholder="Full Name" ng-model="athName3" pattern="[a-zA-Z\s]+" class="form-control" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athTshirt3.$invalid && captainForm.athTshirt3.$touched}">
                                             <label for="athTshirt3" class="control-label">T-Shirt size</label>
-                                            <select name="athTshirt3" id="athTshirt3" tabindex="16" ng-model="athTshirt3" class="form-control" required>
+                                            <select name="athTshirt3" id="athTshirt3" tabindex="17" ng-model="athTshirt3" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <option value="36 S">36 S</option>
                                                 <option value="38 M">38 M</option>
@@ -521,7 +524,7 @@
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athAge3.$invalid && captainForm.athAge3.$touched}">
                                             <label for="athAge3" class="control-label">Age</label>
-                                            <input type="number" id="athAge3" min="21" max="99" name="athAge3" tabindex="15"
+                                            <input type="number" id="athAge3" min="21" max="99" name="athAge3" tabindex="16"
                                                    placeholder="Age (must be above 21)" ng-model="athAge3" class="form-control" required/>
                                             <!--<p class="help-block" ng-show="captainForm.athAge3.$invalid && captainForm.athAge3.$touched">Age Must be Above 21</p>-->
                                         </div>
@@ -571,7 +574,7 @@
                                         </h4>
                                         <!-- Want Wagon check -->
                                         <label class="pmd-checkbox pmd-checkbox-ripple-effect">
-                                            <input type="checkbox" tabindex="17" id="ifBusRequired" name="ifBusRequired" value="1" ng-model="ifBusRequired"
+                                            <input type="checkbox" tabindex="18" id="ifBusRequired" name="ifBusRequired" value="1" ng-model="ifBusRequired"
                                                    ng-disabled="(captainForm.teamName.$dirty && captainForm.teamName.$valid && !ifBusRequired) || (captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid && !ifBusRequired) || (captainForm.capAge.$dirty && captainForm.capAge.$valid && !ifBusRequired) ||
                                         (captainForm.capMob.$dirty && captainForm.capMob.$valid && !ifBusRequired) || (captainForm.capZip.$dirty && captainForm.capZip.$valid && !ifBusRequired) ||
@@ -586,21 +589,21 @@
                                             <div class="col-sm-6 col-xs-12">
                                                 <div class="form-group text-left" ng-class="{ 'has-error' : busForm.busBookerName.$invalid && busForm.busBookerName.$touched}">
                                                     <label for="busBookerName" class="control-label">Name</label>
-                                                    <input type="text" tabindex="18" id="busBookerName" pattern="[a-zA-Z\s]+" name="busBookerName" ng-model="busBookerName" placeholder="Full Name" class="form-control" required/>
+                                                    <input type="text" tabindex="19" id="busBookerName" pattern="[a-zA-Z\s]+" name="busBookerName" ng-model="busBookerName" placeholder="Full Name" class="form-control" required/>
                                                 </div>
                                                 <div class="form-group text-left" ng-class="{ 'has-error' : busForm.busBookerMobile.$invalid && busForm.busBookerMobile.$touched}">
                                                     <label for="busBookerMobile" class="control-label">Mobile Number</label>
-                                                    <input type="number" tabindex="20" id="busBookerMobile" ng-minlength="10" ng-maxlength="10" name="busBookerMobile" ng-model="busBookerMobile" placeholder="10-digit Mobile Number" class="form-control" required/>
+                                                    <input type="number" tabindex="21" id="busBookerMobile" ng-minlength="10" ng-maxlength="10" name="busBookerMobile" ng-model="busBookerMobile" placeholder="10-digit Mobile Number" class="form-control" required/>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-xs-12">
                                                 <div class="form-group text-left" ng-class="{ 'has-error' : busForm.busBookerEmail.$invalid && busForm.busBookerEmail.$touched}">
                                                     <label for="busBookerEmail" class="control-label">Email</label>
-                                                    <input type="email" tabindex="19" id="busBookerEmail" name="busBookerEmail" ng-model="busBookerEmail" placeholder="name@example.com" class="form-control" required/>
+                                                    <input type="email" tabindex="20" id="busBookerEmail" name="busBookerEmail" ng-model="busBookerEmail" placeholder="name@example.com" class="form-control" required/>
                                                 </div>
                                                 <div class="form-group text-left">
                                                     <label for="busBookerSeats" class="control-label">Seats</label>
-                                                    <input type="number" tabindex="21" id="busBookerSeats" name="busBookerSeats" ng-model="busBookerSeats" min="1" ng-keyup="calWagonPrice()" class="form-control" required/>
+                                                    <input type="number" tabindex="22" id="busBookerSeats" name="busBookerSeats" ng-model="busBookerSeats" min="1" ng-keyup="calWagonPrice()" class="form-control" required/>
                                                 </div>
                                             </div>
                                         </div>
@@ -641,7 +644,7 @@
                                         (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
                                         (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
                             <div class="pull-left">
-                                <span class="text-muted" id="team-subtotal">Basic Price (1 x Rs. 8000)</span>
+                                <span class="text-muted" id="team-subtotal">Team of Four (1 x Rs. 8000)</span>
                             </div>
                             <div class="pull-right">
                                 <span class="pink-color" id="final-team-total">Rs. 8000</span>
@@ -812,11 +815,11 @@
                 </ul>
                 <br>
                 <label class="pmd-checkbox pmd-checkbox-ripple-effect">
-                    <input type="checkbox" tabindex="22" id="tncCheck" name="tncCheck" value="1" ng-model="tncCheck" required>
+                    <input type="checkbox" tabindex="23" id="tncCheck" name="tncCheck" value="1" ng-model="tncCheck" required>
                     <span>I have read and agree to the <a href="#" class="common-pink-txt beer-tnc">Terms & Conditions</a></span>
                 </label>
                 <br><br>
-                <button type="button" tabindex="23" class="btn pmd-ripple-effect btn-danger bus-booking-btn"
+                <button type="button" tabindex="24" class="btn pmd-ripple-effect btn-danger bus-booking-btn"
                         ng-disabled="(captainForm.$invalid) && (!ifBusRequired)" ng-click="calcAndPay()">
                     Complete Registration
                 </button>
