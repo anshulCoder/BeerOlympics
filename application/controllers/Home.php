@@ -87,6 +87,7 @@ class Home extends MY_Controller {
         }
         //Saving Captain Data
         $capData = array(
+            'teamName' => $post['teamName'],
             'capName' => $post['capName'],
             'capAge' => $post['capAge'],
             'capEmail' => $post['capEmail'],
@@ -330,7 +331,7 @@ class Home extends MY_Controller {
                 }
                 else
                 {
-                    $mailData = array();
+                      $mailData = array();
                     $userEmail = '';
                     if(isset($instaRecord['capId']) && isStringSet($instaRecord['capId']))
                     {
@@ -341,6 +342,7 @@ class Home extends MY_Controller {
 
                         foreach($teamData as $key => $row)
                         {
+                            $mailData['teamName'] = $row['teamName'];
                             $mailData['capName'] = $row['capName'];
                             $mailData['capEmail'] = $row['capEmail'];
                             $mailData['athleteNames'][] = $row['athleteName'];
@@ -356,12 +358,22 @@ class Home extends MY_Controller {
                         }
                         $mailData['busCount'] = $busCount;
                         $this->sendemail_library->teamBeerSendMail($mailData);
+                        if($busCount > 0)
+                        {
+                            $busMail = array(
+                                'busName' => $mailData['teamName'],
+                                'busSeats' => $busCount
+                            );
+                            $this->sendemail_library->teamBusSendMail($busMail);
+                        }
+                        $this->sendemail_library->teamBeerDetailsSendMail($teamData,$busCount);
                         $userEmail = $instaRecord['capEmail'];
                     }
                     else
                     {
                         $teamData = $this->home_model->getAllBusTeam($instaRecord['busId']);
                         $this->sendemail_library->teamBusSendMail($teamData);
+                        $this->sendemail_library->teamBusDetailsSendMail($teamData);
                         $userEmail = $instaRecord['busEmail'];
                     }
 

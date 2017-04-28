@@ -355,11 +355,22 @@
                                 </ul>
                                 <h4 class="bolder-black">Captain's Details</h4>
                                 <div class="row">
+                                    <div class="col-sm-2 col-xs-0"></div>
+                                    <div class="col-sm-8 col-xs-12">
+                                        <div class="form-group" ng-class="{ 'has-error' : captainForm.teamName.$invalid && captainForm.teamName.$touched}">
+                                            <label for="teamName" class="control-label">Team Name</label>
+                                            <input type="text" id="teamName" name="teamName" tabindex="0"
+                                                   placeholder="Team Name" ng-model="teamName" class="form-control" pattern="[a-zA-Z\s]+" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-0"></div>
+                                </div>
+                                <div class="row">
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capName.$invalid && captainForm.capName.$touched}">
                                             <label for="capName" class="control-label">Name</label>
                                             <input type="text" id="capName" name="capName" tabindex="1"
-                                                   placeholder="Full Name" ng-model="capName" class="form-control" pattern="[a-zA-Z]+" required/>
+                                                   placeholder="Full Name" ng-model="capName" class="form-control" pattern="[a-zA-Z\s]+" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capEmail.$invalid && captainForm.capEmail.$touched}">
                                             <label for="capEmail" class="control-label">Email</label>
@@ -421,7 +432,7 @@
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName1.$invalid && captainForm.athName1.$touched}">
                                             <label for="athName1" class="control-label">Name</label>
                                             <input type="text" id="athName1" name="athName1" tabindex="8"
-                                                   placeholder="Full Name" ng-model="athName1" pattern="[a-zA-Z]+" class="form-control" required/>
+                                                   placeholder="Full Name" ng-model="athName1" pattern="[a-zA-Z\s]+" class="form-control" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athTshirt1.$invalid && captainForm.athTshirt1.$touched}">
                                             <label for="athTshirt1" class="control-label">T-Shirt size</label>
@@ -457,7 +468,7 @@
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName2.$invalid && captainForm.athName2.$touched}">
                                             <label for="athName2" class="control-label">Name</label>
                                             <input type="text" id="athName2" name="athName2" tabindex="11"
-                                                   placeholder="Full Name" ng-model="athName2" pattern="[a-zA-Z]+" class="form-control" required/>
+                                                   placeholder="Full Name" ng-model="athName2" pattern="[a-zA-Z\s]+" class="form-control" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athTshirt2.$invalid && captainForm.athTshirt2.$touched}">
                                             <label for="athTshirt2" class="control-label">T-Shirt size</label>
@@ -493,7 +504,7 @@
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName3.$invalid && captainForm.athName3.$touched}">
                                             <label for="athName3" class="control-label">Name</label>
                                             <input type="text" id="athName3" name="athName3" tabindex="14"
-                                                   placeholder="Full Name" ng-model="athName3" pattern="[a-zA-Z]+" class="form-control" required/>
+                                                   placeholder="Full Name" ng-model="athName3" pattern="[a-zA-Z\s]+" class="form-control" required/>
                                         </div>
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athTshirt3.$invalid && captainForm.athTshirt3.$touched}">
                                             <label for="athTshirt3" class="control-label">T-Shirt size</label>
@@ -561,7 +572,7 @@
                                         <!-- Want Wagon check -->
                                         <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                             <input type="checkbox" tabindex="17" id="ifBusRequired" name="ifBusRequired" value="1" ng-model="ifBusRequired"
-                                                   ng-disabled="(captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
+                                                   ng-disabled="(captainForm.teamName.$dirty && captainForm.teamName.$valid && !ifBusRequired) || (captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid && !ifBusRequired) || (captainForm.capAge.$dirty && captainForm.capAge.$valid && !ifBusRequired) ||
                                         (captainForm.capMob.$dirty && captainForm.capMob.$valid && !ifBusRequired) || (captainForm.capZip.$dirty && captainForm.capZip.$valid && !ifBusRequired) ||
                                         (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid && !ifBusRequired) || (captainForm.athName1.$dirty && captainForm.athName1.$valid && !ifBusRequired) ||
@@ -575,7 +586,7 @@
                                             <div class="col-sm-6 col-xs-12">
                                                 <div class="form-group text-left" ng-class="{ 'has-error' : busForm.busBookerName.$invalid && busForm.busBookerName.$touched}">
                                                     <label for="busBookerName" class="control-label">Name</label>
-                                                    <input type="text" tabindex="18" id="busBookerName" pattern="[a-zA-Z]+" name="busBookerName" ng-model="busBookerName" placeholder="Full Name" class="form-control" required/>
+                                                    <input type="text" tabindex="18" id="busBookerName" pattern="[a-zA-Z\s]+" name="busBookerName" ng-model="busBookerName" placeholder="Full Name" class="form-control" required/>
                                                 </div>
                                                 <div class="form-group text-left" ng-class="{ 'has-error' : busForm.busBookerMobile.$invalid && busForm.busBookerMobile.$touched}">
                                                     <label for="busBookerMobile" class="control-label">Mobile Number</label>
@@ -621,7 +632,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xs-12 my-marginDown" ng-show="(captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
+                        <div class="col-xs-12 my-marginDown" ng-show="(captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
                                         (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
                                         (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
@@ -655,7 +666,7 @@
                         </div>
                     </div>
                     <!-- Wagon Header -->
-                    <div class="wagon-summary" ng-hide="(captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
+                    <div class="wagon-summary" ng-hide="(captainForm.teamName.$dirty && captainForm.teamName.$valid && !ifBusRequired) || (captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid && !ifBusRequired) || (captainForm.capAge.$dirty && captainForm.capAge.$valid && !ifBusRequired) ||
                                         (captainForm.capMob.$dirty && captainForm.capMob.$valid && !ifBusRequired) || (captainForm.capZip.$dirty && captainForm.capZip.$valid && !ifBusRequired) ||
                                         (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid && !ifBusRequired) || (captainForm.athName1.$dirty && captainForm.athName1.$valid && !ifBusRequired) ||
@@ -700,7 +711,7 @@
                     <div class="col-xs-12 my-marginDown">
                         <div class="pull-right">
                             <span class="pink-color" id="final-total"
-                                  ng-show="(ifBusRequired && busForm.busBookerSeats.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
+                                  ng-show="(ifBusRequired && busForm.busBookerSeats.$valid) || (captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
                                         (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
                                         (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
@@ -776,7 +787,7 @@
                         </span>
                     </li>-->
                 </ul>
-                <ul class="list-inline" id="coupon-field" ng-form="couponForm" ng-show="(captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
+                <ul class="list-inline" id="coupon-field" ng-form="couponForm" ng-show="(captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
                                         (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
                                         (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||

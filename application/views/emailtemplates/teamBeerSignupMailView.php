@@ -7,7 +7,7 @@
 
 <body>
     <p>Dear <?php echo trim($mailData['capName']);?>,</p>
-    <p>Woohoo! We have registered your team "<?php echo trim($mailData['capName']);?>" to participate in the Doolally Beer Olympics 2017!<br><br>
+    <p>Woohoo! We have registered your team "<?php echo trim($mailData['teamName']);?>" to participate in the Doolally Beer Olympics 2017!<br><br>
         Your team comprises of <?php echo trim($mailData['capName']);?>, <?php echo implode(', ',$mailData['athleteNames']);?><br><br>
 
         <?php

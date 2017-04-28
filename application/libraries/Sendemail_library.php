@@ -656,7 +656,7 @@ class Sendemail_library
         }
         $fromName  = 'Doolally';
 
-        $subject = 'We have registered Team '.$userData['capName'].' to participate in the Doolally Beer Olympics 2017!';
+        $subject = 'We have registered Team '.$userData['teamName'].' to participate in the Doolally Beer Olympics 2017!';
         $toEmail = $userData['capEmail'];
 
         $this->sendEmail($toEmail, $cc, $fromEmail, $fromPass, $fromName,$replyTo, $subject, $content);
@@ -682,6 +682,48 @@ class Sendemail_library
 
         $subject = 'You have booked '.$userData['busSeats'].' seats on the Doolally Wagon';
         $toEmail = $userData['busEmail'];
+
+        $this->sendEmail($toEmail, $cc, $fromEmail, $fromPass, $fromName,$replyTo, $subject, $content);
+    }
+
+    public function teamBeerDetailsSendMail($userData,$busCount)
+    {
+        $data['mailData'] = $userData;
+
+        $content = $this->CI->load->view('emailtemplates/teamDetailsSignupMailView', $data, true);
+
+        $fromEmail = DEFAULT_SENDER_EMAIL;
+        $fromPass = DEFAULT_SENDER_PASS;
+        $replyTo = $fromEmail;
+
+        $cc = 'tresha@brewcraftsindia.com,saha@brewcraftsindia.com';
+        if($busCount > 0 )
+        {
+            $cc .= ',belinda@brewcraftsindia.com';
+        }
+        $fromName  = 'Doolally';
+
+        $subject = 'New Team Registration For Beer Olympics';
+        $toEmail = 'priyanka@brewcraftsindia.com';
+
+        $this->sendEmail($toEmail, $cc, $fromEmail, $fromPass, $fromName,$replyTo, $subject, $content);
+    }
+
+    public function teamBusDetailsSendMail($userData)
+    {
+        $data['mailData'] = $userData;
+
+        $content = $this->CI->load->view('emailtemplates/busDetailsSignupMailView', $data, true);
+
+        $fromEmail = DEFAULT_SENDER_EMAIL;
+        $fromPass = DEFAULT_SENDER_PASS;
+        $replyTo = $fromEmail;
+
+        $cc = 'tresha@brewcraftsindia.com,saha@brewcraftsindia.com,priyanka@brewcraftsindia.com';
+        $fromName  = 'Doolally';
+
+        $subject = 'New Bus Registration For Beer Olympics';
+        $toEmail = 'belinda@brewcraftsindia.com';
 
         $this->sendEmail($toEmail, $cc, $fromEmail, $fromPass, $fromName,$replyTo, $subject, $content);
     }

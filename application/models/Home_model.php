@@ -76,7 +76,7 @@ class Home_Model extends CI_Model
     }
     public function getAllTeam($capId)
     {
-        $query = "SELECT ocm.id as 'cid',ocm.capName,ocm.capAge,ocm.capEmail,ocm.capMob,
+        $query = "SELECT ocm.id as 'cid',ocm.teamName, ocm.capName,ocm.capAge,ocm.capEmail,ocm.capMob,
                   ocm.capCity,ocm.capZip,ocm.capTshirt,ocm.ifBusRequired as 'ifBusRequiredCap',oam.athleteName, 
                   oam.athleteAge, oam.athleteTshirt,oam.ifBusRequired as 'ifBusRequiredAthlete' FROM olympicscaptainmaster ocm 
                   LEFT JOIN olympicsathletemaster oam ON ocm.id = oam.capId 

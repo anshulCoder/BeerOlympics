@@ -11,7 +11,6 @@
 
         Passenger Details:<br>
         Name: <?php echo trim($mailData['busName']);?><br>
-        Phone: <?php echo trim($mailData['busPhone']);?><br>
         Number of seats: <?php echo trim($mailData['busSeats']);?><br><br>
         Date: Saturday, May 20, 2017<br>
         Departure time & Place: 6.30 am, Doolally Taproom, Bandra<br>
