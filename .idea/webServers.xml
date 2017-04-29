@@ -10,6 +10,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="6c322db9-5a47-4b20-8158-46f71a6e7a1a" name="newBeerOlympics" url="http://35.154.177.231">
+        <fileTransfer host="35.154.177.231" port="22" privateKey="C:\Users\anshul\Downloads\doolProd.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

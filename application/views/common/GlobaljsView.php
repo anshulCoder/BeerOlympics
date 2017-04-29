@@ -367,13 +367,13 @@
         }, 1000);
     });
     $(document).on('click','.beer-tnc', function(){
-        $('#alert-dialog .pmd-card-title-text').html('Terms And Conditions');
-        $('#alert-dialog .modal-body').html('All events are a race against time<br>'+
-        'Please remember this is just a game and not a life altering scenario<br>'+
-        'Each game has a referee, and the referee is always right<br>'+
-        'Also you are definitely drunk, the referee is not.<br>'+
-            'The games are divided into two parts - Eliminations and Finals. The elimination rounds will run from 11 am to 3 pm and the finals will run from 4 pm to 6 pm.<br>'+
-            'All four team members will play all five games. Substitution is not allowed.');
+        $('#alert-dialog .pmd-card-title-text').html('Terms and Conditions');
+        $('#alert-dialog .modal-body').html('<ul><li>All events are a race against time</li>'+
+        '<li>Please remember this is just a game and not a life altering scenario</li>'+
+        '<li>Each game has a referee, and the referee is always right</li>'+
+        '<li>Also you are definitely drunk, the referee is not.</li>'+
+            '<li>The games are divided into two parts - Eliminations and Finals. The elimination rounds will run from 11 am to 3 pm and the finals will run from 4 pm to 6 pm.</li>'+
+            '<li>All four team members will play all five games. Substitution is not allowed.</li>');
         $('#alert-modal').click();
     });
 </script>

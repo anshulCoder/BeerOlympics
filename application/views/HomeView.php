@@ -91,7 +91,7 @@
                                                     <br>
                                                     <div class="row">
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Win</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Win</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
                                                                 <li class="list-group-item text-muted">Gold - 16 pints</li>
                                                                 <li class="list-group-item text-muted">Silver - 12 pints</li>
@@ -99,10 +99,10 @@
                                                             </ul>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Drink</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Drink</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
-                                                                <li class="list-group-item text-muted">Elims - 500ml</li>
-                                                                <li class="list-group-item text-muted">Finals - 500ml</li>
+                                                                <li class="list-group-item text-muted">Elims - 2 litres</li>
+                                                                <li class="list-group-item text-muted">Finals - 2 litres</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -129,7 +129,7 @@
                                                     <br>
                                                     <div class="row">
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Win</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Win</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
                                                                 <li class="list-group-item text-muted">Gold - 16 pints</li>
                                                                 <li class="list-group-item text-muted">Silver - 12 pints</li>
@@ -137,10 +137,10 @@
                                                             </ul>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Drink</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Drink</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
-                                                                <li class="list-group-item text-muted">Elims - 600ml</li>
-                                                                <li class="list-group-item text-muted">Finals - 600ml</li>
+                                                                <li class="list-group-item text-muted">Elims - 2.4 litres</li>
+                                                                <li class="list-group-item text-muted">Finals - 2.4 litres</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -161,13 +161,13 @@
                                                 <div class="media-body">
                                                     <h4 class="common-black-txt"><strong>Beer Pong</strong></h4>
                                                     <p class="text-muted">
-                                                        Beer filled cups arranged in a triangular shape at either end of a table; the objective of the game is simple: throw the ping pong balls in your opponent’s beer cups and make them drink.<br><br>
-                                                        So drink fast, shoot straight. Easier said than done, since you’re seeing everything in triplicate.
+                                                        Beer filled cups arranged in a triangular shape at either end of a table; the objective of the game is simple: throw the ping pong balls, drink fast, shoot straight.<br><br>
+                                                        Easier said than done, since you’re seeing everything in triplicate.
                                                     </p>
                                                     <br>
                                                     <div class="row">
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Win</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Win</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
                                                                 <li class="list-group-item text-muted">Gold - 16 pints</li>
                                                                 <li class="list-group-item text-muted">Silver - 12 pints</li>
@@ -175,10 +175,10 @@
                                                             </ul>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Drink</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Drink</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
-                                                                <li class="list-group-item text-muted">Elims - 600ml</li>
-                                                                <li class="list-group-item text-muted">Finals - 600ml</li>
+                                                                <li class="list-group-item text-muted">Elims - 2.4 litres</li>
+                                                                <li class="list-group-item text-muted">Finals - 2.4 litres</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -199,13 +199,13 @@
                                                 <div class="media-body">
                                                     <h4 class="common-black-txt"><strong>Fletter</strong></h4>
                                                     <p class="text-muted">
-                                                        Each player keeps throwing a letter down and calling out ONLY 3 letter words from the lot. The objective of the game, is to get maximum amount of 3 letter words from the bunch.<br><br>
-                                                        Remember that, calling out anything but a 3 lettered word gets you Flettered = Penalised!
+                                                        Each player keeps throwing a letter down and calling out ONLY 4 letter words from the lot. The objective of the game, is to get maximum points. Easy? Not when you are slurring already.<br>
+                                                        Remember that, calling out anything less than a four-lettered word gets you Flettered = Penalised!
                                                     </p>
                                                     <br>
                                                     <div class="row">
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Win</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Win</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
                                                                 <li class="list-group-item text-muted">Gold - 16 pints</li>
                                                                 <li class="list-group-item text-muted">Silver - 12 pints</li>
@@ -213,10 +213,10 @@
                                                             </ul>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Drink</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Drink</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
-                                                                <li class="list-group-item text-muted">Elims - 600ml</li>
-                                                                <li class="list-group-item text-muted">Finals - 600ml</li>
+                                                                <li class="list-group-item text-muted">Elims - 2.4 litres</li>
+                                                                <li class="list-group-item text-muted">Finals - 2.4 litres</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -243,7 +243,7 @@
                                                     <br>
                                                     <div class="row">
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Win</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Win</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
                                                                 <li class="list-group-item text-muted">Gold - 16 pints</li>
                                                                 <li class="list-group-item text-muted">Silver - 12 pints</li>
@@ -251,10 +251,10 @@
                                                             </ul>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <h4 class="my-NoMargin common-black-txt"><strong>You Will Drink</strong></h4>
+                                                            <h4 class="my-NoMargin common-black-txt"><strong>Your Team Will Drink</strong></h4>
                                                             <ul class="list-group pmd-list pmd-card-list">
-                                                                <li class="list-group-item text-muted">Elims - 400ml</li>
-                                                                <li class="list-group-item text-muted">Finals - 400ml</li>
+                                                                <li class="list-group-item text-muted">Elims - 1.6 litres</li>
+                                                                <li class="list-group-item text-muted">Finals - 1.6 litres</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -274,14 +274,14 @@
                 </div>
 
                 <!-- Prizes Accordion -->
-                <div class="panel-group pmd-accordion hidden-xs" id="prizes-accordion" role="tablist" aria-multiselectable="true" >
+                <div class="panel-group pmd-accordion" id="prizes-accordion" role="tablist" aria-multiselectable="true" >
                     <div class="panel panel-default games-panel">
                         <div class="panel-heading" role="tab" id="prizesOne">
                             <h4 class="panel-title">
-                                <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#prizes-accordion" href="#prize-form" aria-expanded="true" aria-controls="prize-form" data-expandable="true">Grand Prizes <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
+                                <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#prizes-accordion" href="#prize-form" aria-expanded="false" aria-controls="prize-form" data-expandable="true">Grand Prizes <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
                             </h4>
                         </div>
-                        <div id="prize-form" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="prizesOne">
+                        <div id="prize-form" class="panel-collapse collapse" role="tabpanel" aria-labelledby="prizesOne">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <ul class="list-inline">
@@ -319,10 +319,10 @@
                         <div class="panel panel-default games-panel">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#register-accordion" href="#reg-form" aria-expanded="true" aria-controls="reg-form" data-expandable="true">Register Team <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
+                                    <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#register-accordion" href="#reg-form" aria-expanded="false" aria-controls="reg-form" data-expandable="true">Register Team <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
                                 </h4>
                             </div>
-                            <div id="reg-form" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div id="reg-form" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                 <h4 class="bolder-black">Registration Fee:</h4>
                                 <p class="text-muted">Rs. 8000 for a team of 4.</p>
                                 <h4 class="bolder-black">What’s Included:</h4>
@@ -371,7 +371,7 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.capName.$invalid && captainForm.capName.$touched}">
-                                            <label for="capName" class="control-label">Name</label>
+                                            <label for="capName" class="control-label">Captain's Name</label>
                                             <input type="text" id="capName" name="capName" tabindex="2"
                                                    placeholder="Full Name" ng-model="capName" class="form-control" pattern="[a-zA-Z\s]+" required/>
                                         </div>
@@ -429,7 +429,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h4 class="bolder-black">Beer Athelete #1</h4>
+                                <h4 class="bolder-black">Beer Athlete #1</h4>
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName1.$invalid && captainForm.athName1.$touched}">
@@ -465,7 +465,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h4 class="bolder-black">Beer Athelete #2</h4>
+                                <h4 class="bolder-black">Beer Athlete #2</h4>
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName2.$invalid && captainForm.athName2.$touched}">
@@ -501,7 +501,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h4 class="bolder-black">Beer Athelete #3</h4>
+                                <h4 class="bolder-black">Beer Athlete #3</h4>
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-12 text-left">
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.athName3.$invalid && captainForm.athName3.$touched}">
@@ -548,10 +548,10 @@
                     <div class="panel panel-default games-panel">
                         <div class="panel-heading" role="tab" id="wagonOne">
                             <h4 class="panel-title">
-                                <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#wagon-accordion" href="#wagon-form" aria-expanded="true" aria-controls="wagon-form" data-expandable="true">Doolally Wagon <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
+                                <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#wagon-accordion" href="#wagon-form" aria-expanded="false" aria-controls="wagon-form" data-expandable="true">Doolally Wagon <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
                             </h4>
                         </div>
-                        <div id="wagon-form" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="wagonOne">
+                        <div id="wagon-form" class="panel-collapse collapse" role="tabpanel" aria-labelledby="wagonOne">
                             <form name="busForm" id="busForm" ng-model="busForm" method="post" action="<?php echo base_url();?>submitBusForm" novalidate>
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -564,7 +564,7 @@
                                             Arrival time & Place: 11 am, 1st Brewhouse, Corinthians, Pune<br><br>
 
                                             Return journey schedule (same day)<br>
-                                            Departure time & Place: 8 pm, 1st Brew/house, Corinthians, Pune<br>
+                                            Departure time & Place: 8 pm, 1st Brewhouse, Corinthians, Pune<br>
                                             Arrival time & Place: 12 midnight, Doolally Taproom, Bandra<br>
 
                                         </p>
@@ -583,7 +583,7 @@
                                         (captainForm.athName2.$dirty && captainForm.athName2.$valid && !ifBusRequired) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid && !ifBusRequired) ||
                                         (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid && !ifBusRequired) || (captainForm.athName3.$dirty && captainForm.athName3.$valid && !ifBusRequired) ||
                                         (captainForm.athAge3.$dirty && captainForm.athAge3.$valid && !ifBusRequired) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid && !ifBusRequired)"/>
-                                            <span>Only Bus Registration (Non-Athelete)</span>
+                                            <span>Only Bus Registration (Non-Athlete)</span>
                                         </label>
                                         <div class="row" ng-show="ifBusRequired">
                                             <div class="col-sm-6 col-xs-12">
@@ -614,62 +614,9 @@
                     </div>
                 </div>
 
-                <div class="order-summary-divider">
-                  <span>
-                    Order Summary
-                  </span>
-                </div>
-                <br>
-                <div class="row text-left">
-                    <!-- Team Header -->
-                    <div class="team-summary" ng-hide="ifBusRequired">
-                        <div class="col-xs-12 my-marginDown">
-                            <div class="alert-success order-header">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="fa fa-users"></i>
-                                    </li>
-                                    <li>
-                                        <h3 class="bolder-black my-NoMargin">Team Tickets</h3>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 my-marginDown" ng-show="(captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
-                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
-                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
-                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
-                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
-                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
-                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
-                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
-                            <div class="pull-left">
-                                <span class="text-muted" id="team-subtotal">Team of Four (1 x Rs. 8000)</span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="pink-color" id="final-team-total">Rs. 8000</span>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 my-marginDown">
-                            <div class="pull-left hide coupon-panel">
-                                <span class="text-muted"><span id="coupon-details">Coupon (50% off)</span> <div class="pmd-chip pmd-chip-no-icon"><span class="only-coupon">BOXXXX</span> <a class="pmd-chip-action remove-coupon" href="javascript:void(0);">
-                                                <i class="fa fa-times"></i></a></div></span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="pink-color" id="coupon-discount"></span>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 my-marginDown">
-                            <div class="pull-left">
-                                <span class="text-muted" id="team-wagon-details"></span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="pink-color" id="team-wagon-price"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Wagon Header -->
-                    <div class="wagon-summary" ng-hide="(captainForm.teamName.$dirty && captainForm.teamName.$valid && !ifBusRequired) || (captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
+                <!-- Order Accordion -->
+                <div class="panel-group pmd-accordion" id="order-accordion" role="tablist" aria-multiselectable="true"
+                ng-show="(busForm.busBookerSeats.$dirty && busForm.busBookerSeats.$valid) || (captainForm.teamName.$dirty && captainForm.teamName.$valid && !ifBusRequired) || (captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid && !ifBusRequired) || (captainForm.capAge.$dirty && captainForm.capAge.$valid && !ifBusRequired) ||
                                         (captainForm.capMob.$dirty && captainForm.capMob.$valid && !ifBusRequired) || (captainForm.capZip.$dirty && captainForm.capZip.$valid && !ifBusRequired) ||
                                         (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid && !ifBusRequired) || (captainForm.athName1.$dirty && captainForm.athName1.$valid && !ifBusRequired) ||
@@ -677,42 +624,112 @@
                                         (captainForm.athName2.$dirty && captainForm.athName2.$valid && !ifBusRequired) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid && !ifBusRequired) ||
                                         (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid && !ifBusRequired) || (captainForm.athName3.$dirty && captainForm.athName3.$valid && !ifBusRequired) ||
                                         (captainForm.athAge3.$dirty && captainForm.athAge3.$valid && !ifBusRequired) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid && !ifBusRequired)">
-                        <div class="col-xs-12 my-marginDown">
-                            <div class="alert-success order-header">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="fa fa-bus"></i>
-                                    </li>
-                                    <li>
-                                        <h3 class="bolder-black my-NoMargin">Wagon Tickets</h3>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="panel panel-default games-panel">
+                        <div class="panel-heading" role="tab" id="orderOne">
+                            <h4 class="panel-title">
+                                <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#order-accordion" href="#order-form" aria-expanded="true" aria-controls="prize-form" data-expandable="true">
+                                    <div class="order-summary-divider">
+                                      <span>
+                                        Order Summary <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i>
+                                      </span>
+                                    </div>
+                                </a>
+                            </h4>
                         </div>
-                        <div class="col-xs-12 my-marginDown">
-                            <div class="pull-left">
-                                <span class="text-muted" id="bus-subtotal"></span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="pink-color" id="final-bus-total"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Total Header -->
-                    <div class="col-xs-12 my-marginDown">
-                        <div class="alert-success order-header">
-                            <ul class="list-inline">
-                                <li>
-                                    <i class="fa fa-inr"></i>
-                                </li>
-                                <li>
-                                    <h3 class="bolder-black my-NoMargin">Total</h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 my-marginDown">
-                        <div class="pull-right">
+                        <div id="order-form" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="prizesOne">
+                            <div class="row text-left">
+                                <!-- Team Header -->
+                                <div class="team-summary" ng-hide="ifBusRequired">
+                                    <div class="col-xs-12 my-marginDown">
+                                        <div class="alert-success order-header">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <i class="sum_team"></i>
+                                                </li>
+                                                <li>
+                                                    <h3 class="bolder-black my-NoMargin">Team Tickets</h3>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 my-marginDown" ng-show="(captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
+                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
+                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
+                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
+                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
+                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
+                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
+                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
+                                        <div class="pull-left">
+                                            <span class="text-muted" id="team-subtotal">Team of Four (1 x Rs. 8000)</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <span class="pink-color" id="final-team-total">Rs. 8000</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 my-marginDown">
+                                        <div class="pull-left hide coupon-panel">
+                                <span class="text-muted"><span id="coupon-details">Coupon (50% off)</span> <div class="pmd-chip pmd-chip-no-icon"><span class="only-coupon">BOXXXX</span> <a class="pmd-chip-action remove-coupon" href="javascript:void(0);">
+                                                <i class="fa fa-times"></i></a></div></span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <span class="pink-color" id="coupon-discount"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 my-marginDown">
+                                        <div class="pull-left">
+                                            <span class="text-muted" id="team-wagon-details"></span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <span class="pink-color" id="team-wagon-price"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Wagon Header -->
+                                <div class="wagon-summary" ng-hide="(captainForm.teamName.$dirty && captainForm.teamName.$valid && !ifBusRequired) || (captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
+                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid && !ifBusRequired) || (captainForm.capAge.$dirty && captainForm.capAge.$valid && !ifBusRequired) ||
+                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid && !ifBusRequired) || (captainForm.capZip.$dirty && captainForm.capZip.$valid && !ifBusRequired) ||
+                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid && !ifBusRequired) || (captainForm.athName1.$dirty && captainForm.athName1.$valid && !ifBusRequired) ||
+                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid && !ifBusRequired) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid && !ifBusRequired) ||
+                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid && !ifBusRequired) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid && !ifBusRequired) ||
+                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid && !ifBusRequired) || (captainForm.athName3.$dirty && captainForm.athName3.$valid && !ifBusRequired) ||
+                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid && !ifBusRequired) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid && !ifBusRequired)">
+                                    <div class="col-xs-12 my-marginDown">
+                                        <div class="alert-success order-header">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <i class="sum_bus"></i>
+                                                </li>
+                                                <li>
+                                                    <h3 class="bolder-black my-NoMargin">Wagon Tickets</h3>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 my-marginDown" ng-hide="!ifBusRequired">
+                                        <div class="pull-left">
+                                            <span class="text-muted" id="bus-subtotal"></span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <span class="pink-color" id="final-bus-total"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Total Header -->
+                                <div class="col-xs-12 my-marginDown">
+                                    <div class="alert-success order-header">
+                                        <ul class="list-inline">
+                                            <li>
+                                                <i class="sum_total"></i>
+                                            </li>
+                                            <li>
+                                                <h3 class="bolder-black my-NoMargin">Total</h3>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 my-marginDown">
+                                    <div class="pull-right">
                             <span class="pink-color" id="final-total"
                                   ng-show="(ifBusRequired && busForm.busBookerSeats.$valid) || (captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
@@ -724,95 +741,41 @@
                                         (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
                                 Rs. 8000
                             </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-inline" id="coupon-field" ng-form="couponForm" ng-show="(captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
+                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
+                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
+                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
+                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
+                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
+                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
+                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
+                                <li>
+                                    <label class="pmd-checkbox pmd-checkbox-ripple-effect">
+                                        <input type="checkbox" id="couponCheck" name="couponCheck" value="1" ng-model="couponCheck">
+                                        <span>Have Coupon?</span>
+                                    </label>
+                                </li>
+                                <li ng-show="couponCheck">
+                                    <input type="text" id="couponC" name="couponC" placeholder="Coupon Code" ng-model="couponC" class="form-control">
+                                </li>
+                                <li ng-show="couponCheck">
+                                    <button type="button" class="btn pmd-ripple-effect btn-danger bus-booking-btn" ng-click="checkCoupon()">
+                                        Check
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <ul class="list-inline summary-list">
-                    <!--<li class="wagon-summary" ng-hide="(captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
-                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid && !ifBusRequired) || (captainForm.capAge.$dirty && captainForm.capAge.$valid && !ifBusRequired) ||
-                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid && !ifBusRequired) || (captainForm.capZip.$dirty && captainForm.capZip.$valid && !ifBusRequired) ||
-                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid && !ifBusRequired) || (captainForm.athName1.$dirty && captainForm.athName1.$valid && !ifBusRequired) ||
-                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid && !ifBusRequired) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid && !ifBusRequired) ||
-                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid && !ifBusRequired) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid && !ifBusRequired) ||
-                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid && !ifBusRequired) || (captainForm.athName3.$dirty && captainForm.athName3.$valid && !ifBusRequired) ||
-                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid && !ifBusRequired) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid && !ifBusRequired)">
-                        <h3 class="list-group-item-heading common-black-txt">Doolally Wagon Tickets</h3>
-                        <span class="list-group-item-text" id="bus-subtotal"></span><br>
-                        <span class="list-group-item-text pink-color" id="final-bus-total"></span>
-                    </li>-->
-                    <!--<li class="team-summary" ng-hide="ifBusRequired">
-                        <h3 class="list-group-item-heading common-black-txt">Team Tickets</h3>
-                        <div ng-show="(captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
-                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
-                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
-                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
-                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
-                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
-                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
-                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
-                            <span class="list-group-item-text" id="team-subtotal">1 x Rs. 8000</span><br>
-                            <span class="list-group-item-text pink-color" id="final-team-total">Rs. 8000</span>
-                        </div>
-                    </li>-->
-                    <!--<li class="hide coupon-panel" ng-show="(captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
-                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
-                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
-                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
-                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
-                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
-                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
-                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
-                        <h3 class="list-group-item-heading common-black-txt">Coupon Applied</h3>
-                        <div class="pmd-chip pmd-chip-no-icon"><span class="only-coupon">BO-XXXX</span> <a class="pmd-chip-action remove-coupon" href="javascript:void(0);">
-                                <i class="fa fa-times"></i></a>
-                        </div>
-                    </li>-->
-                    <!--<li class="total-summary">
-                        <h3 class="list-group-item-heading common-black-txt">Total</h3>
-                        <span class="list-group-item-text hide" id="coupon-strike" ng-show="(captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
-                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
-                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
-                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
-                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
-                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
-                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
-                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)"></span>
-                        <span class="list-group-item-text pink-color" id="final-total"
-                            ng-show="(ifBusRequired && busForm.busBookerSeats.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
-                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
-                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
-                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
-                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
-                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
-                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
-                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
-                            Rs. 8000
-                        </span>
-                    </li>-->
-                </ul>
-                <ul class="list-inline" id="coupon-field" ng-form="couponForm" ng-show="(captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
-                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
-                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
-                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
-                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
-                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
-                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
-                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
-                    <li>
-                        <label class="pmd-checkbox pmd-checkbox-ripple-effect">
-                            <input type="checkbox" id="couponCheck" name="couponCheck" value="1" ng-model="couponCheck">
-                            <span>Have Coupon?</span>
-                        </label>
-                    </li>
-                    <li ng-show="couponCheck">
-                        <input type="text" id="couponC" name="couponC" placeholder="Coupon Code" ng-model="couponC" class="form-control">
-                    </li>
-                    <li ng-show="couponCheck">
-                        <button type="button" class="btn pmd-ripple-effect btn-danger bus-booking-btn" ng-click="checkCoupon()">
-                            Check
-                        </button>
-                    </li>
-                </ul>
+
+                <!--<div class="order-summary-divider">
+                  <span>
+                    Order Summary
+                  </span>
+                </div>-->
                 <br>
                 <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                     <input type="checkbox" tabindex="23" id="tncCheck" name="tncCheck" value="1" ng-model="tncCheck" required>

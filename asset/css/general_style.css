@@ -285,7 +285,7 @@ input::-webkit-inner-spin-button {
 }
 .beerHome .games-img
 {
-    width:200px;
+    width:210px;
 }
 .beerHome .pmd-list .list-group-item
 {
@@ -315,7 +315,7 @@ input::-webkit-inner-spin-button {
 }
 .beerHome .pune-bus-logo
 {
-    width: 400px;
+    width: 300px;
     margin: 20px auto;
 }
 .beerHome .pune-bus-small-logo
@@ -393,6 +393,7 @@ input::-webkit-inner-spin-button {
 .beerHome .order-header
 {
     padding:5px;
+    background-color:transparent !important;
 }
 .beerHome .order-header ul
 {
@@ -421,6 +422,30 @@ input::-webkit-inner-spin-button {
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+.beerHome .sum_bus
+{
+    background:url('../images/sum_bus.png') no-repeat;
+    display:block;
+    width:14px;
+    height:17px;
+    background-size: 100% 100%;
+}
+.beerHome .sum_team
+{
+    background:url('../images/sum_team.png') no-repeat;
+    display:block;
+    width:30px;
+    height:13px;
+    background-size: 100% 100%;
+}
+.beerHome .sum_total
+{
+    background:url('../images/sum_total.png') no-repeat;
+    display:block;
+    width:11px;
+    height:17px;
+    background-size: 100% 100%;
 }
 /* Custom Progress bar */
 /* Progress Bar */
@@ -521,6 +546,10 @@ input::-webkit-inner-spin-button {
     .beerHome .media-left.media-middle
     {
         display:block !important;
+    }
+    .media-left, .media>.pull-left
+    {
+        padding-right:0;
     }
 }
 @media screen and (max-width:400px)
