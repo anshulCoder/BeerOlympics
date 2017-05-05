@@ -435,17 +435,22 @@ input::-webkit-inner-spin-button {
 {
     background:url('../images/sum_team.png') no-repeat;
     display:block;
-    width:30px;
-    height:13px;
+    width: 25px;
+    height: 13px;
+    margin-left: -15px;
     background-size: 100% 100%;
 }
 .beerHome .sum_total
 {
     background:url('../images/sum_total.png') no-repeat;
     display:block;
-    width:11px;
+    width:10px;
     height:17px;
     background-size: 100% 100%;
+}
+.beerHome #final-total
+{
+    margin-right:-10px;
 }
 /* Custom Progress bar */
 /* Progress Bar */

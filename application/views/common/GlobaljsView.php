@@ -6,6 +6,18 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/swiper.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/angular.min.js"></script>
 
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-98264087-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
 <!-- constants -->
 <script>
     window.base_url = '<?php echo base_url(); ?>';
@@ -103,6 +115,7 @@
         $scope.isReqPending = false;
         $scope.calcAndPay = function()
         {
+            ga('send','event','Registration Button','Clicked','Beer Olympics');
             if($scope.ifBusRequired)
             {
                 if($scope.busForm.busBookerName.$invalid )
@@ -143,10 +156,12 @@
                         success: function(data)
                         {
                             hideProgressBar();
+                            ga('send','event','Only Wagon','Signup','Beer Olympics');
                             $scope.isReqPending = false;
                             if(data.status === true)
                             {
                                 window.location.href=data.payUrl;
+
                             }
                             else
                             {
@@ -191,6 +206,7 @@
                             success: function(data)
                             {
                                 hideProgressBar();
+                                ga('send','event','Team','Signup','Beer Olympics');
                                 $scope.isReqPending = false;
                                 if(data.status === true)
                                 {
@@ -351,6 +367,7 @@
         {
             if($('#payStatus').val() == '1')
             {
+                ga('send','event','Thank You','Payment Done','Beer Olympics');
                 $('#alert-dialog .pmd-card-title-text').html('Thank You!');
             }
             else
@@ -365,6 +382,10 @@
         $('html, body').animate({
             scrollTop: $("#wagon-accordion").offset().top
         }, 1000);
+        if(!$('#wagon-form').hasClass('in'))
+        {
+            $('a[data-parent="#wagon-accordion"]').click();
+        }
     });
     $(document).on('click','.beer-tnc', function(){
         $('#alert-dialog .pmd-card-title-text').html('Terms and Conditions');

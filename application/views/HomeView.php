@@ -3,6 +3,28 @@
 <head>
 	<meta charset="utf-8">
 	<title>Beer Olympics</title>
+    <meta name="description" content="Gulpius. Burpius. Slurpius. The craziest celebration of beer athleticism." />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Doolally Beer Olympics 2017">
+    <meta itemprop="description" content="Gulpius. Burpius. Slurpius. The craziest celebration of beer athleticism.">
+    <meta itemprop="image" content="<?php echo base_url();?>asset/images/beer_olympics_2017.jpg">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@godoolally">
+    <meta name="twitter:title" content="Doolally Beer Olympics 2017">
+    <meta name="twitter:description" content="Gulpius. Burpius. Slurpius. The craziest celebration of beer athleticism.">
+    <meta name="twitter:creator" content="@godoolally">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="<?php echo base_url();?>asset/images/beer_olympics_2017.jpg">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Doolally Beer Olympics 2017" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://beerolympics.in" />
+    <meta property="og:image" content="<?php echo base_url();?>asset/images/beer_olympics_2017.jpg" />
+    <meta property="og:description" content="Gulpius. Burpius. Slurpius. The craziest celebration of beer athleticism." />
 	<?php echo $globalStyle; ?>
 </head>
 <body class="beerHome">
@@ -289,24 +311,27 @@
                                             <div class="trophy-wrapper">
                                                 <img class="img-responsive my-trophy-img" alt="Silver" src="<?php echo base_url();?>asset/images/trophy_silver.png"/>
                                                 <h4 class="bolder-black">Silver</h4>
-                                                <p class="text-muted">15 Pints</p>
+                                                <!--<p class="text-muted">15 Pints</p>-->
                                             </div>
                                         </li>
                                         <li>
                                             <div class="trophy-wrapper">
                                                 <img class="img-responsive my-trophy-img" alt="Gold" src="<?php echo base_url();?>asset/images/trophy_gold.png"/>
                                                 <h4 class="bolder-black">Gold</h4>
-                                                <p class="text-muted">20 Pints</p>
+                                                <!--<p class="text-muted">20 Pints</p>-->
                                             </div>
                                         </li>
                                         <li>
                                             <div class="trophy-wrapper">
                                                 <img class="img-responsive my-trophy-img" alt="Bronze" src="<?php echo base_url();?>asset/images/trophy_bronze.png"/>
                                                 <h4 class="bolder-black">Bronze</h4>
-                                                <p class="text-muted">10 Pints</p>
+                                                <!--<p class="text-muted">10 Pints</p>-->
                                             </div>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="col-xs-12 text-center">
+                                    <p>Beer worth Rs 50,000 up for grabs</p>
                                 </div>
                             </div>
                         </div>
@@ -363,7 +388,7 @@
                                         <div class="form-group" ng-class="{ 'has-error' : captainForm.teamName.$invalid && captainForm.teamName.$touched}">
                                             <label for="teamName" class="control-label">Team Name</label>
                                             <input type="text" id="teamName" name="teamName" tabindex="1"
-                                                   placeholder="Team Name" ng-model="teamName" class="form-control" pattern="[a-zA-Z\s]+" required/>
+                                                   placeholder="Team Name" ng-model="teamName" class="form-control" required/>
                                         </div>
                                     </div>
                                     <div class="col-sm-2 col-xs-0"></div>
@@ -725,24 +750,25 @@
                                             <li>
                                                 <h3 class="bolder-black my-NoMargin">Total</h3>
                                             </li>
+                                            <li class="pull-right">
+                                                <span class="pink-color" id="final-total"
+                                                      ng-show="(ifBusRequired && busForm.busBookerSeats.$valid) || (captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
+                                                            (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
+                                                            (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
+                                                            (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
+                                                            (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
+                                                            (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
+                                                            (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
+                                                            (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
+                                                    Rs. 8000
+                                                </span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 my-marginDown">
-                                    <div class="pull-right">
-                            <span class="pink-color" id="final-total"
-                                  ng-show="(ifBusRequired && busForm.busBookerSeats.$valid) || (captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
-                                        (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
-                                        (captainForm.capMob.$dirty && captainForm.capMob.$valid) || (captainForm.capZip.$dirty && captainForm.capZip.$valid) ||
-                                        (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid) || (captainForm.athName1.$dirty && captainForm.athName1.$valid) ||
-                                        (captainForm.athAge1.$dirty && captainForm.athAge1.$valid) || (captainForm.athTshirt1.$dirty && captainForm.athTshirt1.$valid) ||
-                                        (captainForm.athName2.$dirty && captainForm.athName2.$valid) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid) ||
-                                        (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid) || (captainForm.athName3.$dirty && captainForm.athName3.$valid) ||
-                                        (captainForm.athAge3.$dirty && captainForm.athAge3.$valid) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid)">
-                                Rs. 8000
-                            </span>
-                                    </div>
-                                </div>
+                                <!--<div class="col-xs-12 my-marginDown">
+
+                                </div>-->
                             </div>
                             <ul class="list-inline" id="coupon-field" ng-form="couponForm" ng-show="(captainForm.teamName.$dirty && captainForm.teamName.$valid) || (captainForm.capName.$dirty && captainForm.capName.$valid) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid) || (captainForm.capAge.$dirty && captainForm.capAge.$valid) ||
@@ -779,7 +805,7 @@
                 <br>
                 <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                     <input type="checkbox" tabindex="23" id="tncCheck" name="tncCheck" value="1" ng-model="tncCheck" required>
-                    <span>I have read and agree to the <a href="#" class="common-pink-txt beer-tnc">Terms & Conditions</a></span>
+                    <span>I have read and agree to the <a style="cursor:pointer;" class="common-pink-txt beer-tnc">Terms & Conditions</a></span>
                 </label>
                 <br><br>
                 <button type="button" tabindex="24" class="btn pmd-ripple-effect btn-danger bus-booking-btn"
