@@ -56,3 +56,4 @@ $route['submitBeerForm'] = 'home/getPaymentLink';
 $route['submitBusForm'] = 'home/getBusPayLink';
 $route['checkCoupon'] = 'home/verifyCoupon';
 $route['thank_you'] = 'home/thankYou';
+$route['meta_save'] = 'home/metaSave';

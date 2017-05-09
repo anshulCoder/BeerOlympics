@@ -18,8 +18,12 @@ class Home extends MY_Controller {
     public function index()
 	{
 		$data = array();
+		$metaInfo = $this->home_model->getRecentMeta();
 		$data['globalStyle'] = $this->dataformatinghtml_library->getGlobalStyleHtml($data);
 		$data['globalJs'] = $this->dataformatinghtml_library->getGlobalJsHtml($data);
+        $data['meta']['title'] = $metaInfo['metaTitle'];
+        $data['meta']['description'] = $metaInfo['metaDescription'];
+        $data['meta']['img'] = META_SITE_PATH.'asset/images/thumb/'.$metaInfo['metaImg'];
 		//$data['headerView'] = $this->dataformatinghtml_library->getHeaderHtml($data);
 
 		$this->load->view('HomeView', $data);
@@ -450,4 +454,10 @@ class Home extends MY_Controller {
         }
     }
 
+    public function metaSave()
+    {
+        $post = $this->input->post();
+        $this->home_model->saveMetaRecord($post);
+        echo 'success';
+    }
 }

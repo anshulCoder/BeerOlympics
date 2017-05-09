@@ -125,5 +125,22 @@ class Home_Model extends CI_Model
         return true;
     }
 
+    public function saveMetaRecord($details)
+    {
+        $details['updateDT'] = date('Y-m-d H:i:s');
+
+        $this->db->insert('custommetatags', $details);
+        return true;
+    }
+    public function getRecentMeta()
+    {
+        $query = "SELECT *"
+            ." FROM custommetatags"
+            ." ORDER BY id DESC LIMIT 0,1";
+
+        $result = $this->db->query($query)->row_array();
+
+        return $result;
+    }
 }
 

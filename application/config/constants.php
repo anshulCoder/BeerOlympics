@@ -129,3 +129,5 @@ defined('DEFAULT_SENDER_PASS') OR define('DEFAULT_SENDER_PASS','doolally123');
 defined('WAGON_PRICE')   OR define('WAGON_PRICE', 800);
 defined('FINAL_COUPON_AMOUNT')   OR define('FINAL_COUPON_AMOUNT', 6000);
 defined('INITIAL_TEAM_AMOUNT')   OR define('INITIAL_TEAM_AMOUNT', 8000);
+
+defined('META_SITE_PATH')   OR define('META_SITE_PATH', 'https://doolally.in/');
