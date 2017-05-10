@@ -448,7 +448,7 @@ input::-webkit-inner-spin-button {
     height:17px;
     background-size: 100% 100%;
 }
-.beerHome #final-total
+.beerHome .total-row
 {
     margin-right:-10px;
 }
