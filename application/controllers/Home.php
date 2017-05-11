@@ -331,59 +331,69 @@ class Home extends MY_Controller {
                 {
                       $mailData = array();
                     $userEmail = '';
-                    if(isset($instaRecord['capId']) && isStringSet($instaRecord['capId']))
+                    //$get['payment_id']
+                    $instaPayRecord = $this->curl_library->getInstaMojoRecord($get['payment_id']);
+                    if(myIsArray($instaPayRecord) && $instaPayRecord['success'] === true)
                     {
-                        $teamData = $this->home_model->getAllTeam($instaRecord['capId']);
-                        //Fetch all team details And send mail
-                        $busCount = 0;
-                        $isCapBus = true;
+                        if(isset($instaRecord['capId']) && isStringSet($instaRecord['capId']))
+                        {
+                            $teamData = $this->home_model->getAllTeam($instaRecord['capId']);
+                            //Fetch all team details And send mail
+                            $busCount = 0;
+                            $isCapBus = true;
 
-                        foreach($teamData as $key => $row)
-                        {
-                            $mailData['teamName'] = $row['teamName'];
-                            $mailData['capName'] = $row['capName'];
-                            $mailData['capEmail'] = $row['capEmail'];
-                            $mailData['athleteNames'][] = $row['athleteName'];
-                            if($row['ifBusRequiredCap'] == '1' && $isCapBus)
+                            foreach($teamData as $key => $row)
                             {
-                                $isCapBus = false;
-                                $busCount++;
+                                $mailData['teamName'] = $row['teamName'];
+                                $mailData['capName'] = $row['capName'];
+                                $mailData['capEmail'] = $row['capEmail'];
+                                $mailData['athleteNames'][] = $row['athleteName'];
+                                if($row['ifBusRequiredCap'] == '1' && $isCapBus)
+                                {
+                                    $isCapBus = false;
+                                    $busCount++;
+                                }
+                                if($row['ifBusRequiredAthlete'] == '1')
+                                {
+                                    $busCount++;
+                                }
                             }
-                            if($row['ifBusRequiredAthlete'] == '1')
+                            $mailData['busCount'] = $busCount;
+                            $this->sendemail_library->teamBeerSendMail($mailData);
+                            if($busCount > 0)
                             {
-                                $busCount++;
+                                $busMail = array(
+                                    'busName' => $mailData['teamName'],
+                                    'busSeats' => $busCount,
+                                    'busEmail' => $mailData['capEmail']
+                                );
+                                $this->sendemail_library->teamBusSendMail($busMail);
                             }
+                            $this->sendemail_library->teamBeerDetailsSendMail($teamData,$busCount);
+                            $userEmail = $instaRecord['capEmail'];
                         }
-                        $mailData['busCount'] = $busCount;
-                        $this->sendemail_library->teamBeerSendMail($mailData);
-                        if($busCount > 0)
+                        else
                         {
-                            $busMail = array(
-                                'busName' => $mailData['teamName'],
-                                'busSeats' => $busCount,
-                                'busEmail' => $mailData['capEmail']
-                            );
-                            $this->sendemail_library->teamBusSendMail($busMail);
+                            $teamData = $this->home_model->getAllBusTeam($instaRecord['busId']);
+                            $this->sendemail_library->teamBusSendMail($teamData);
+                            $this->sendemail_library->teamBusDetailsSendMail($teamData);
+                            $userEmail = $instaRecord['busEmail'];
                         }
-                        $this->sendemail_library->teamBeerDetailsSendMail($teamData,$busCount);
-                        $userEmail = $instaRecord['capEmail'];
+
+                        $details = array(
+                            'tripMojoId' => $get['payment_id'],
+                            'bookingStatus' => '1'
+                        );
+                        $this->home_model->updatePayDetails($details,$instaRecord['id']);
+
+                        $data['payStatus'] = true;
+                        $data['paySuccess'] = 'A confirmation email has been sent to you on '.$userEmail;
                     }
                     else
                     {
-                        $teamData = $this->home_model->getAllBusTeam($instaRecord['busId']);
-                        $this->sendemail_library->teamBusSendMail($teamData);
-                        $this->sendemail_library->teamBusDetailsSendMail($teamData);
-                        $userEmail = $instaRecord['busEmail'];
+                        $data['payStatus'] = false;
+                        $data['payError'] = 'Invalid Payment Id';
                     }
-
-                    $details = array(
-                        'tripMojoId' => $get['payment_id'],
-                        'bookingStatus' => '1'
-                    );
-                    $this->home_model->updatePayDetails($details,$instaRecord['id']);
-
-                    $data['payStatus'] = true;
-                    $data['paySuccess'] = 'A confirmation email has been sent to you on '.$userEmail;
                 }
             }
             else
