@@ -454,7 +454,7 @@
                                             <label for="capTshirt" class="control-label">T-Shirt size</label>
                                             <select name="capTshirt" id="capTshirt" tabindex="8" ng-model="capTshirt" class="form-control" required>
                                                 <option value="">Select</option>
-                                                <option value="36 S">36 S</option>
+                                                <!--<option value="36 S">36 S</option>-->
                                                 <option value="38 M">38 M</option>
                                                 <option value="40 L">40 L</option>
                                                 <option value="42 XL">42 XL</option>
@@ -523,7 +523,7 @@
                                             <label for="athTshirt1" class="control-label">T-Shirt size</label>
                                             <select name="athTshirt1" id="athTshirt1" tabindex="12" ng-model="athTshirt1" class="form-control" required>
                                                 <option value="">Select</option>
-                                                <option value="36 S">36 S</option>
+                                                <!--<option value="36 S">36 S</option>-->
                                                 <option value="38 M">38 M</option>
                                                 <option value="40 L">40 L</option>
                                                 <option value="42 XL">42 XL</option>
@@ -568,7 +568,7 @@
                                             <label for="athTshirt2" class="control-label">T-Shirt size</label>
                                             <select name="athTshirt2" id="athTshirt2" tabindex="16" ng-model="athTshirt2" class="form-control" required>
                                                 <option value="">Select</option>
-                                                <option value="36 S">36 S</option>
+                                                <!--<option value="36 S">36 S</option>-->
                                                 <option value="38 M">38 M</option>
                                                 <option value="40 L">40 L</option>
                                                 <option value="42 XL">42 XL</option>
@@ -613,7 +613,7 @@
                                             <label for="athTshirt3" class="control-label">T-Shirt size</label>
                                             <select name="athTshirt3" id="athTshirt3" tabindex="20" ng-model="athTshirt3" class="form-control" required>
                                                 <option value="">Select</option>
-                                                <option value="36 S">36 S</option>
+                                                <!--<option value="36 S">36 S</option>-->
                                                 <option value="38 M">38 M</option>
                                                 <option value="40 L">40 L</option>
                                                 <option value="42 XL">42 XL</option>
