@@ -89,6 +89,10 @@ class Home extends MY_Controller {
                 return false;
             }
         }
+        if(isset($post['ifNonIndian']))
+        {
+            $post['capMob'] = '9820570311';
+        }
         //Saving Captain Data
         $capData = array(
             'teamName' => $post['teamName'],
@@ -99,6 +103,7 @@ class Home extends MY_Controller {
             'capCity' => $post['capCity'],
             'capZip' => $post['capZip'],
             'capTshirt' => $post['capTshirt'],
+            'capMeal' => $post['capMeal'],
             'insertedDateTime' => date('Y-m-d H:i:s')
         );
         if(isset($couponId))
@@ -120,7 +125,8 @@ class Home extends MY_Controller {
                 'capId' => $captainId,
                 'athleteName' => $post['athName'.$i],
                 'athleteAge' => $post['athAge'.$i],
-                'athleteTshirt' => $post['athTshirt'.$i]
+                'athleteTshirt' => $post['athTshirt'.$i],
+                'athleteMeal' => $post['athMeal'.$i]
             );
             if(isset($post['ifBusRequired'.$i]) && isStringSet($post['ifBusRequired'.$i]))
             {
@@ -255,8 +261,20 @@ class Home extends MY_Controller {
         }
         else
         {
+            $errorDetails = array(
+                'refUrl' => 'beerolmpics.in',
+                'errorTxt' => json_encode($linkGot)
+            );
+            $this->home_model->saveErrorLog($errorDetails);
             $data['status'] = false;
-            $data['errorMsg'] = "Error Connecting To Payment Server";
+            if(isset($linkGot['message']['phone']))
+            {
+                $data['errorMsg'] = $linkGot['message']['phone'][0];
+            }
+            else
+            {
+                $data['errorMsg'] = "Error Connecting To Payment Server";
+            }
         }
 
         return $data;
@@ -347,6 +365,7 @@ class Home extends MY_Controller {
                                 $mailData['teamName'] = $row['teamName'];
                                 $mailData['capName'] = $row['capName'];
                                 $mailData['capEmail'] = $row['capEmail'];
+                                $mailData['capMeal'] = $row['capMeal'];
                                 $mailData['athleteNames'][] = $row['athleteName'];
                                 if($row['ifBusRequiredCap'] == '1' && $isCapBus)
                                 {
@@ -469,5 +488,39 @@ class Home extends MY_Controller {
         $post = $this->input->post();
         $this->home_model->saveMetaRecord($post);
         echo 'success';
+    }
+
+    public function mugBeerOlympicsCoupons()
+    {
+        $toBeInserted = array();
+        $couponGens = array();
+        $mugList = array(252,287,306,405,527,619,761,888,1221,1574,1607,1702,6162,6666,6777,7777,7990,8056,8590,9777);
+        $tempCodes = $this->home_model->getAllCouponCodes();
+        $couponGens = explode(',',$tempCodes['coupons']);
+
+        foreach($mugList as $key)
+        {
+            $newCode = mt_rand(1000,99999);
+
+            while(myInArray('BO'.$newCode,$couponGens))
+            {
+                $newCode = mt_rand(1000,99999);
+            }
+
+            $toBeInserted[] = array(
+                'couponCode' => 'BO'.$newCode,
+                'couponType' => 'Percentage',
+                'couponDetails' => '25',
+                'ownerDetails' => $key,
+                'couponExpiry' => '2017-05-20',
+                'isRedeemed' => 0,
+                'ifActive' => 1,
+                'createDateTime' => date('Y-m-d H:i:s'),
+                'useDateTime' => null
+            );
+        }
+
+        $this->home_model->saveOlympicsCodes($toBeInserted);
+        echo 'Saved';
     }
 }

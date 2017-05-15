@@ -452,6 +452,16 @@ input::-webkit-inner-spin-button {
 {
     margin-right:-10px;
 }
+.beerHome .captain-mob
+{
+    position:relative;
+}
+.beerHome .captain-mob .non-indian
+{
+    position:absolute;
+    top:0;
+    right:0;
+}
 /* Custom Progress bar */
 /* Progress Bar */
 .progress {
@@ -539,11 +549,22 @@ input::-webkit-inner-spin-button {
         left: 107%;
         right: -8%; }
 }
+@media screen and (max-width:1000px)
+{
+    .beerHome .captain-mob .non-indian
+    {
+        position:relative;
+    }
+}
 @media screen and (max-width:767px)
 {
     .beerHome .wagon-check
     {
         margin-top:0;
+    }
+    .beerHome .captain-mob .non-indian
+    {
+        position:absolute;
     }
 }
 @media screen and (max-width:500px)

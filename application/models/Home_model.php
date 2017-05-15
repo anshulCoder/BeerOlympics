@@ -77,8 +77,8 @@ class Home_Model extends CI_Model
     public function getAllTeam($capId)
     {
         $query = "SELECT ocm.id as 'cid',ocm.teamName, ocm.capName,ocm.capAge,ocm.capEmail,ocm.capMob,
-                  ocm.capCity,ocm.capZip,ocm.capTshirt,ocm.ifBusRequired as 'ifBusRequiredCap',oam.athleteName, 
-                  oam.athleteAge, oam.athleteTshirt,oam.ifBusRequired as 'ifBusRequiredAthlete' FROM olympicscaptainmaster ocm 
+                  ocm.capCity,ocm.capZip,ocm.capTshirt,ocm.capMeal,ocm.ifBusRequired as 'ifBusRequiredCap',oam.athleteName, 
+                  oam.athleteAge, oam.athleteTshirt,oam.athleteMeal,oam.ifBusRequired as 'ifBusRequiredAthlete' FROM olympicscaptainmaster ocm 
                   LEFT JOIN olympicsathletemaster oam ON ocm.id = oam.capId 
                    WHERE ocm.id = ".$capId;
 
@@ -141,6 +141,20 @@ class Home_Model extends CI_Model
         $result = $this->db->query($query)->row_array();
 
         return $result;
+    }
+
+    public function getAllCouponCodes()
+    {
+        $query = "SELECT GROUP_CONCAT(couponCode) as 'coupons' FROM olympicscouponmaster";
+
+        $result = $this->db->query($query)->row_array();
+
+        return $result;
+    }
+    public function saveOlympicsCodes($data)
+    {
+        $this->db->insert_batch('olympicscouponmaster',$data);
+        return true;
     }
 }
 

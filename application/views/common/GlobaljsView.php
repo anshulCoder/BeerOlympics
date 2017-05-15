@@ -188,6 +188,11 @@
             {
                 if($scope.captainForm.$valid)
                 {
+                    if(!$('#ifNonIndian').is(':checked') && $('#capMob').val() == '')
+                    {
+                        $('#error-alert').attr('data-message','Please Enter Valid 10 Digit Mobile Number!').click();
+                        return false;
+                    }
                     if(!$('#tncCheck').is(":checked"))
                     {
                         $('#error-alert').attr('data-message','Please Agree to Terms!').click();
@@ -346,6 +351,11 @@
                 $('#final-bus-total').html('Rs. '+wagonFinal);
                 $('#final-total').html('Rs. '+wagonFinal);
             }
+        };
+        $scope.clearMob = function()
+        {
+          $('#capMob').val('');
+          $('.captain-mob').removeClass('has-error');
         };
     });
 

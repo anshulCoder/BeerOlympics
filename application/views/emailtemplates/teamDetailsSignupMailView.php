@@ -47,6 +47,21 @@
                     <td><?php echo $row['capTshirt'];?></td>
                 </tr>
                 <tr>
+                    <td width="208">Captain Meal: </td>
+                    <td>
+                        <?php
+                            if($row['capMeal'] == '1')
+                            {
+                                echo 'Veg';
+                            }
+                            else
+                            {
+                                echo 'Non-Veg';
+                            }
+                        ?>
+                    </td>
+                </tr>
+                <tr>
                     <td width="208">Captain Bus Status: </td>
                     <td>
                         <?php
@@ -82,6 +97,21 @@
             <tr>
                 <td width="208">Tshirt: </td>
                 <td><?php echo $row['athleteTshirt'];?></td>
+            </tr>
+            <tr>
+                <td width="208">Meal: </td>
+                <td>
+                    <?php
+                    if($row['athleteMeal'] == '1')
+                    {
+                        echo 'Veg';
+                    }
+                    else
+                    {
+                        echo 'Non-Veg';
+                    }
+                    ?>
+                </td>
             </tr>
             <tr>
                 <td width="208">Bus Status: </td>
