@@ -26,7 +26,7 @@ class Home extends MY_Controller {
         $data['meta']['img'] = META_SITE_PATH.'asset/images/thumb/'.$metaInfo['metaImg'];
 		//$data['headerView'] = $this->dataformatinghtml_library->getHeaderHtml($data);
 
-		$this->load->view('HomeView', $data);
+		$this->load->view('HomeSplashView', $data);
 	}
 
     public function mrpData()
@@ -44,6 +44,9 @@ class Home extends MY_Controller {
         $post = $this->input->post();
         $data = array();
 
+        $data['status'] = true;
+        echo json_encode($data);
+        return true;
         $isCouponSet = false;
         $finalAmt = INITIAL_TEAM_AMOUNT;
         // Checking for coupon code
@@ -169,7 +172,9 @@ class Home extends MY_Controller {
     {
         $post = $this->input->post();
         $data = array();
-
+        $data['status'] = true;
+        echo json_encode($data);
+        return true;
         $finalAmt = WAGON_PRICE;
         if(isset($post['busBookerName']) && isStringSet($post['busBookerName']) &&
             isset($post['busBookerEmail']) && isStringSet($post['busBookerEmail']) &&
@@ -494,7 +499,7 @@ class Home extends MY_Controller {
     {
         $toBeInserted = array();
         $couponGens = array();
-        $mugList = array(252,287,306,405,527,619,761,888,1221,1574,1607,1702,6162,6666,6777,7777,7990,8056,8590,9777);
+        $mugList = array(35,35);
         $tempCodes = $this->home_model->getAllCouponCodes();
         $couponGens = explode(',',$tempCodes['coupons']);
 

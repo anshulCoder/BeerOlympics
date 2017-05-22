@@ -247,6 +247,11 @@ input::-webkit-inner-spin-button {
     background:#f8f8f8;
     font-family: 'Averia Serif Libre' !important;
 }
+.beerHome .splash-text
+{
+    font-family: 'Averia Serif Libre' !important;
+    font-size:25px;
+}
 .beerHome .main-logo
 {
     display: block;

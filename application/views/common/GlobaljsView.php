@@ -387,6 +387,7 @@
             $('#alert-dialog .modal-body').html($('#payText').val());
             $('#alert-modal').click();
         }
+        //$('#error-alert').attr('data-message','Online registrations have closed!').click();
     });
     $(document).on('click','#only-book-wagon', function(){
         $('html, body').animate({

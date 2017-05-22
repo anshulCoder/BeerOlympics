@@ -379,8 +379,8 @@
                     <div class="panel-group pmd-accordion" id="register-accordion" role="tablist" aria-multiselectable="true" >
                         <div class="panel panel-default games-panel">
                             <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#register-accordion" href="#reg-form" aria-expanded="false" aria-controls="reg-form" data-expandable="true">Register Team <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
+                                <h4 class="panel-title"><!--data-toggle="collapse"--><!--aria-controls="reg-form"-->
+                                    <a class="common-pink-txt custom-collapse-bar"  data-parent="#register-accordion" href="#reg-form" aria-expanded="false"  data-expandable="true">Register Team <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
                                 </h4>
                             </div>
                             <div id="reg-form" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
@@ -656,7 +656,8 @@
                     <div class="panel panel-default games-panel">
                         <div class="panel-heading" role="tab" id="wagonOne">
                             <h4 class="panel-title">
-                                <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#wagon-accordion" href="#wagon-form" aria-expanded="false" aria-controls="wagon-form" data-expandable="true">Doolally Wagon <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
+                                <!--data-toggle="collapse"--><!--wagon-form-->
+                                <a class="common-pink-txt custom-collapse-bar"  data-parent="#wagon-accordion" href="#wagon-form" aria-expanded="false" aria-controls="" data-expandable="false">Doolally Wagon <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i></a>
                             </h4>
                         </div>
                         <div id="wagon-form" class="panel-collapse collapse" role="tabpanel" aria-labelledby="wagonOne">
@@ -725,8 +726,8 @@
                 </div>
 
                 <!-- Order Accordion -->
-                <div class="panel-group pmd-accordion" id="order-accordion" role="tablist" aria-multiselectable="true"
-                ng-show="(busForm.busBookerSeats.$dirty && busForm.busBookerSeats.$valid) || (captainForm.teamName.$dirty && captainForm.teamName.$valid && !ifBusRequired) || (captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
+                <div class="panel-group pmd-accordion hide" id="order-accordion" role="" aria-multiselectable="true">
+                    <!--ng-show="(busForm.busBookerSeats.$dirty && busForm.busBookerSeats.$valid) || (captainForm.teamName.$dirty && captainForm.teamName.$valid && !ifBusRequired) || (captainForm.capName.$dirty && captainForm.capName.$valid && !ifBusRequired) || (captainForm.capEmail.$dirty && captainForm.capEmail.$valid && !ifBusRequired) ||
                                         (captainForm.capCity.$dirty && captainForm.capCity.$valid && !ifBusRequired) || (captainForm.capAge.$dirty && captainForm.capAge.$valid && !ifBusRequired) ||
                                         (captainForm.capZip.$dirty && captainForm.capZip.$valid && !ifBusRequired) || (captainForm.capMeal.$dirty && captainForm.capMeal.$valid && !ifBusRequired) ||
                                         (captainForm.capTshirt.$dirty && captainForm.capTshirt.$valid && !ifBusRequired) || (captainForm.athName1.$dirty && captainForm.athName1.$valid && !ifBusRequired) ||
@@ -735,11 +736,11 @@
                                         (captainForm.athName2.$dirty && captainForm.athName2.$valid && !ifBusRequired) || (captainForm.athAge2.$dirty && captainForm.athAge2.$valid && !ifBusRequired) ||
                                         (captainForm.athTshirt2.$dirty && captainForm.athTshirt2.$valid && !ifBusRequired) || (captainForm.athName3.$dirty && captainForm.athName3.$valid && !ifBusRequired) ||
                                         (captainForm.athAge3.$dirty && captainForm.athAge3.$valid && !ifBusRequired) || (captainForm.athTshirt3.$dirty && captainForm.athTshirt3.$valid && !ifBusRequired) ||
-                                        (captainForm.athMeal3.$dirty && captainForm.athMeal3.$valid && !ifBusRequired)">
+                                        (captainForm.athMeal3.$dirty && captainForm.athMeal3.$valid && !ifBusRequired)"-->
                     <div class="panel panel-default games-panel">
                         <div class="panel-heading" role="tab" id="orderOne">
-                            <h4 class="panel-title">
-                                <a class="common-pink-txt custom-collapse-bar" data-toggle="collapse" data-parent="#order-accordion" href="#order-form" aria-expanded="true" aria-controls="prize-form" data-expandable="true">
+                            <h4 class="panel-title"><!--data-toggle="collapse"--><!--aria-controls="prize-form"-->
+                                <a class="common-pink-txt custom-collapse-bar"  data-parent="#order-accordion" href="#order-form" aria-expanded="true"  data-expandable="true">
                                     <div class="order-summary-divider">
                                       <span>
                                         Order Summary <i class="fa fa-caret-down material-icons pmd-accordion-arrow"></i>
@@ -904,8 +905,8 @@
                 </label>
                 <br><br>
                 <button type="button" tabindex="24" class="btn pmd-ripple-effect btn-danger bus-booking-btn"
-                        ng-disabled="(captainForm.$invalid) && (!ifBusRequired)" ng-click="calcAndPay()">
-                    Complete Registration
+                        ng-disabled="true"><!--(captainForm.$invalid) && (!ifBusRequired)ng-click="calcAndPay()"-->
+                    Sold Out
                 </button>
                 <br><br>
                 <p class="common-pink-txt">Contact Us</p>
